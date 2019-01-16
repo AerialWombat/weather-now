@@ -5,6 +5,37 @@ import typography from "./utils/typography";
 typography.injectStyles();
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      unit: "SI",
+      location: {
+        latitude: 0,
+        longitude: 0
+        //City||Town name
+      },
+      currentWeather: {
+        summary: "",
+        icon: "",
+        windSpeed: "",
+        precipChance: 0,
+        currentTemp: 0,
+        highTemp: 0,
+        lowTemp: 0
+      },
+      dayOneWeather: {
+        icon: "",
+        precipChance: "",
+        highTemp: "",
+        lowTemp: ""
+      }
+    };
+  }
+
+  componentDidMount = () => {
+    console.log(this.state);
+  };
+
   render() {
     return (
       <div className="App">
