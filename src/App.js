@@ -1,25 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import typography from "./utils/typography";
+
+typography.injectStyles();
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>Hello World</h1>
+        <p>
+          The path of the righteous man is beset on all sides by the iniquities
+          of the selfish and the tyranny of evil men. Blessed is he who, in the
+          name of charity and good will, shepherds the weak through the valley
+          of darkness, for he is truly his brother's keeper and the finder of
+          lost children. And I will strike down upon thee with great vengeance
+          and furious anger those who would attempt to poison and destroy My
+          brothers. And you will know My name is the Lord when I lay My
+          vengeance upon thee.
+        </p>
       </div>
     );
   }
