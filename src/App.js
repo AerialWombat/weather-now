@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import Header from "./components/Header/Header";
+import MainCard from "./components/MainCard/MainCard";
 import "./App.css";
-import typography from "./utils/typography";
+// import typography from "./utils/typography";
 
-typography.injectStyles();
+// typography.injectStyles();
 
 class App extends Component {
   constructor() {
@@ -15,19 +17,31 @@ class App extends Component {
         //City||Town name
       },
       currentWeather: {
-        summary: "",
-        icon: "",
-        windSpeed: "",
-        precipChance: 0,
-        currentTemp: 0,
-        highTemp: 0,
-        lowTemp: 0
+        summary: "Clear throughout the day",
+        icon: "clear-day",
+        windSpeed: "2.32",
+        precipChance: 23,
+        currentTemp: -4.84,
+        highTemp: -6.62,
+        lowTemp: -14.71
       },
       dayOneWeather: {
-        icon: "",
-        precipChance: "",
-        highTemp: "",
-        lowTemp: ""
+        icon: "snow",
+        precipChance: 0,
+        highTemp: 0.93,
+        lowTemp: -2.05
+      },
+      dayTwoWeather: {
+        icon: "fog",
+        precipChance: 54,
+        highTemp: 11.92,
+        lowTemp: 11.16
+      },
+      dayThreeWeather: {
+        icon: "rain",
+        precipChance: 73,
+        highTemp: 12.58,
+        lowTemp: -1.98
       }
     };
   }
@@ -37,22 +51,23 @@ class App extends Component {
   };
 
   render() {
+    const { unit, location, currentWeather } = this.state;
     return (
       <div className="App">
-        <h1>Hello World</h1>
-        <p>
-          The path of the righteous man is beset on all sides by the iniquities
-          of the selfish and the tyranny of evil men. Blessed is he who, in the
-          name of charity and good will, shepherds the weak through the valley
-          of darkness, for he is truly his brother's keeper and the finder of
-          lost children. And I will strike down upon thee with great vengeance
-          and furious anger those who would attempt to poison and destroy My
-          brothers. And you will know My name is the Lord when I lay My
-          vengeance upon thee.
-        </p>
+        <Header />
+        <h1>
+          The coordinates are {location.latitude}, {location.longitude}
+        </h1>
+        <MainCard unit={unit} currentWeather={currentWeather} />
       </div>
     );
   }
 }
 
 export default App;
+
+//Header: Title, location name, searchbar later
+//Display container: main display, 3 side displays
+//Footer: "Made by", "Powered by Dark Sky"
+
+//Check if location, if not, show a default message instead asking for search or something
