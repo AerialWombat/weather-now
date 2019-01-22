@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import Header from "./components/Header/Header";
 import MainCard from "./components/MainCard/MainCard";
+import SideCard from "./components/SideCard/SideCard";
+import Footer from "./components/Footer/Footer";
 import "./App.css";
+
 // import typography from "./utils/typography";
 
 // typography.injectStyles();
@@ -51,14 +54,24 @@ class App extends Component {
   };
 
   render() {
-    const { unit, location, currentWeather } = this.state;
+    const {
+      unit,
+      location,
+      currentWeather,
+      dayOneWeather,
+      dayTwoWeather,
+      dayThreeWeather
+    } = this.state;
     return (
       <div className="App">
         <Header />
-        <h1>
-          The coordinates are {location.latitude}, {location.longitude}
-        </h1>
-        <MainCard unit={unit} currentWeather={currentWeather} />
+        <main>
+          <MainCard unit={unit} weather={currentWeather} />
+          <SideCard unit={unit} weather={dayOneWeather} />
+          <SideCard unit={unit} weather={dayTwoWeather} />
+          <SideCard unit={unit} weather={dayThreeWeather} />
+        </main>
+        <Footer />
       </div>
     );
   }
@@ -71,3 +84,4 @@ export default App;
 //Footer: "Made by", "Powered by Dark Sky"
 
 //Check if location, if not, show a default message instead asking for search or something
+//Change state data on unit button check/uncheck

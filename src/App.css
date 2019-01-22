@@ -19,7 +19,3 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
   outline: #000 dotted 2px;
   outline-offset: .05em;
 }
-
-* {
-  border: 1px orangered solid;
-}

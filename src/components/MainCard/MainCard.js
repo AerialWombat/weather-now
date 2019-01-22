@@ -1,7 +1,7 @@
 import React from "react";
 import WeatherIcon from "react-icons-weather";
 
-const MainDisplay = ({ unit, currentWeather }) => {
+const MainCard = ({ unit, weather }) => {
   const {
     summary,
     icon,
@@ -10,7 +10,7 @@ const MainDisplay = ({ unit, currentWeather }) => {
     currentTemp,
     highTemp,
     lowTemp
-  } = currentWeather;
+  } = weather;
   return (
     <div>
       <WeatherIcon name="darksky" iconId={icon} />
@@ -27,7 +27,7 @@ const MainDisplay = ({ unit, currentWeather }) => {
   );
 };
 
-export default MainDisplay;
+export default MainCard;
 
 //change color based on icon
 //conditional rendering with given unit type
