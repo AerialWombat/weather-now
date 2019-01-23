@@ -13,28 +13,30 @@ const MainCard = ({ unit, weather }) => {
     lowTemp
   } = weather;
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       <WeatherIcon className={styles.icon} name="darksky" iconId={icon} />
-      <h1>
+      <h1 className={styles.currentTemp}>
         {currentTemp}
         &#176;
       </h1>
-      <h3>{summary}</h3>
-      <div className={styles.dataPoint}>
-        <i className="wi wi-thermometer" />
-        <p>{highTemp}&#176;</p>
-      </div>
-      <div className={styles.dataPoint}>
-        <i className="wi wi-thermometer-exterior" />
-        <p>{lowTemp}&#176;</p>
-      </div>
-      <div className={styles.dataPoint}>
-        <i className="wi wi-strong-wind" />
-        <p>{windSpeed}m/sec</p>
-      </div>
-      <div className={styles.dataPoint}>
-        <i className="wi wi-raindrop" />
-        <p>{precipChance}%</p>
+      <h3 className={styles.summary}>{summary}</h3>
+      <div className={styles.sideInfo}>
+        <div className={styles.dataPoint}>
+          <i className="wi wi-thermometer" />
+          <p>{highTemp}&#176;</p>
+        </div>
+        <div className={styles.dataPoint}>
+          <i className="wi wi-thermometer-exterior" />
+          <p>{lowTemp}&#176;</p>
+        </div>
+        <div className={styles.dataPoint}>
+          <i className="wi wi-strong-wind" />
+          <p>{windSpeed}m/sec</p>
+        </div>
+        <div className={styles.dataPoint}>
+          <i className="wi wi-raindrop" />
+          <p>{precipChance}%</p>
+        </div>
       </div>
     </div>
   );

@@ -1,3 +1,6 @@
-.container {
-  border: solid 1px orange;
+.wrapper {
+  //   border: solid 1px orange;
+  display: flex;
+  flex-flow: row;
+  margin: 1rem 0;
 }

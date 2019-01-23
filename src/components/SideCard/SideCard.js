@@ -5,7 +5,7 @@ import styles from "./SideCard.module.scss";
 const SideCard = ({ unit, weather }) => {
   const { icon, precipChance, highTemp, lowTemp } = weather;
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       <WeatherIcon name="darksky" iconId={icon} />
       <span>
         <i className="wi wi-thermometer" />

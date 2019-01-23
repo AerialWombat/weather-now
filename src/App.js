@@ -67,9 +67,11 @@ class App extends Component {
         <Header unit={unit} />
         <main>
           <MainCard unit={unit} weather={currentWeather} />
-          <SideCard unit={unit} weather={dayOneWeather} />
-          <SideCard unit={unit} weather={dayTwoWeather} />
-          <SideCard unit={unit} weather={dayThreeWeather} />
+          <div>
+            <SideCard unit={unit} weather={dayOneWeather} />
+            <SideCard unit={unit} weather={dayTwoWeather} />
+            <SideCard unit={unit} weather={dayThreeWeather} />
+          </div>
         </main>
         <Footer />
       </div>

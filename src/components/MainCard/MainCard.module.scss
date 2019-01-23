@@ -1,12 +1,46 @@
-.container {
+.wrapper {
   height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 25% 25% 1fr;
-  border: solid 1px blue;
-}
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "icon icon currentTemp currentTemp"
+    "icon icon summary summary"
+    "sideInfo sideInfo sideInfo sideInfo";
 
-.icon {
-  font-size: 6rem;
+  .icon {
+    grid-area: icon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8rem;
+  }
+
+  .currentTemp {
+    grid-area: currentTemp;
+    display: flex;
+    align-items: center;
+    font-size: 4rem;
+  }
+
+  .summary {
+    grid-area: summary;
+    display: flex;
+    align-items: center;
+  }
+
+  .sideInfo {
+    grid-area: sideInfo;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+  }
+
+  .dataPoint {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
