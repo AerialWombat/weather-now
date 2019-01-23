@@ -1,0 +1,12 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 25% 25% 1fr;
+  border: solid 1px blue;
+}
+
+.icon {
+  font-size: 6rem;
+}

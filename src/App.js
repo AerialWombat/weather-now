@@ -3,7 +3,7 @@ import Header from "./components/Header/Header";
 import MainCard from "./components/MainCard/MainCard";
 import SideCard from "./components/SideCard/SideCard";
 import Footer from "./components/Footer/Footer";
-import "./App.css";
+import "./App.scss";
 
 // import typography from "./utils/typography";
 
@@ -64,7 +64,7 @@ class App extends Component {
     } = this.state;
     return (
       <div className="App">
-        <Header />
+        <Header unit={unit} />
         <main>
           <MainCard unit={unit} weather={currentWeather} />
           <SideCard unit={unit} weather={dayOneWeather} />

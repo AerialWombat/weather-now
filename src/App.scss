@@ -1,0 +1,63 @@
+/* CSS Reset
+======================================*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: none;
+  outline: #000 dotted 2px;
+  outline-offset: 0.05em;
+}
+
+/* Layout
+======================================*/
+
+.App {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 20vh 1fr 10vh;
+  grid-auto-columns: 100%;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+
+  header {
+    grid-area: header;
+    max-height: 100%;
+  }
+
+  main {
+    grid-area: main;
+    max-height: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 40% repeat(3, 15%);
+    grid-gap: 1.5rem;
+  }
+
+  footer {
+    grid-area: footer;
+    max-height: 100%;
+  }
+}

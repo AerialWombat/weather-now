@@ -1,5 +1,6 @@
 import React from "react";
 import WeatherIcon from "react-icons-weather";
+import styles from "./MainCard.module.scss";
 
 const MainCard = ({ unit, weather }) => {
   const {
@@ -12,17 +13,29 @@ const MainCard = ({ unit, weather }) => {
     lowTemp
   } = weather;
   return (
-    <div>
-      <WeatherIcon name="darksky" iconId={icon} />
-      <h3>
+    <div className={styles.container}>
+      <WeatherIcon className={styles.icon} name="darksky" iconId={icon} />
+      <h1>
         {currentTemp}
         &#176;
-      </h3>
+      </h1>
       <h3>{summary}</h3>
-      <p>{highTemp}&#176;</p>
-      <p>{lowTemp}&#176;</p>
-      <p>{windSpeed} m/s</p>
-      <p>{precipChance}%</p>
+      <div className={styles.dataPoint}>
+        <i className="wi wi-thermometer" />
+        <p>{highTemp}&#176;</p>
+      </div>
+      <div className={styles.dataPoint}>
+        <i className="wi wi-thermometer-exterior" />
+        <p>{lowTemp}&#176;</p>
+      </div>
+      <div className={styles.dataPoint}>
+        <i className="wi wi-strong-wind" />
+        <p>{windSpeed}m/sec</p>
+      </div>
+      <div className={styles.dataPoint}>
+        <i className="wi wi-raindrop" />
+        <p>{precipChance}%</p>
+      </div>
     </div>
   );
 };

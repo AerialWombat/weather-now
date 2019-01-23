@@ -1,12 +1,13 @@
 import React from "react";
+import styles from "./Header.module.scss";
 
-const Header = () => {
+const Header = ({ unit }) => {
   return (
     <header>
-      <h1>Weather Now</h1>
-      <h3>Where this is</h3>
-      <input type="text" placeholder="Location" />
-      <input type="checkbox" />
+      <h1 className="title">Weather Now</h1>
+      <h3 className="subtitle">Where this is</h3>
+      <input className="search" type="text" placeholder="Location" />
+      <button>{unit === "SI" ? "F" : "C"}&#176;</button>
     </header>
   );
 };
