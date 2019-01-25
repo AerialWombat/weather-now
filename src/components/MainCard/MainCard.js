@@ -31,7 +31,7 @@ const MainCard = ({ unit, weather }) => {
         </div>
         <div className={styles.dataPoint}>
           <i className="wi wi-strong-wind" />
-          <p>{windSpeed}m/sec</p>
+          <p>{windSpeed}m/s</p>
         </div>
         <div className={styles.dataPoint}>
           <i className="wi wi-raindrop" />

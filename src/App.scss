@@ -35,7 +35,7 @@ textarea:focus {
   min-width: 100vw;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 20vh 1fr 5vh;
+  grid-template-rows: 20vh 1fr 10vh;
   grid-auto-columns: 100%;
   grid-template-areas:
     "header"
@@ -88,7 +88,7 @@ textarea:focus {
   }
 
   main {
-    padding: 0 1rem;
+    padding: .5rem 1rem;
     grid-area: main;
     max-height: 100%;
     display: grid;
