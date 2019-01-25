@@ -17,10 +17,10 @@ const MainCard = ({ unit, weather }) => {
       <WeatherIcon className={styles.icon} name="darksky" iconId={icon} />
       <h1 className={styles.currentTemp}>
         {currentTemp}
-        &#176;
+        &#8451;
       </h1>
       <h3 className={styles.summary}>{summary}</h3>
-      <div className={styles.sideInfo}>
+      <div className={styles.info}>
         <div className={styles.dataPoint}>
           <i className="wi wi-thermometer" />
           <p>{highTemp}&#176;</p>

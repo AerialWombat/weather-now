@@ -1,6 +1,7 @@
 .wrapper {
   height: 100%;
   width: 100%;
+  padding: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -8,11 +9,14 @@
     "icon icon currentTemp currentTemp"
     "icon icon summary summary"
     "sideInfo sideInfo sideInfo sideInfo";
+  border-radius: 15px;
+  box-shadow: 1px 1px 3px #222;
+  background: #f6bd26;
+  color: #fafef9;
 
   .icon {
     grid-area: icon;
     display: flex;
-    justify-content: center;
     align-items: center;
     font-size: 8rem;
   }
@@ -20,17 +24,19 @@
   .currentTemp {
     grid-area: currentTemp;
     display: flex;
+    justify-content: center;
     align-items: center;
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   .summary {
     grid-area: summary;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
   }
 
-  .sideInfo {
+  .info {
     grid-area: sideInfo;
     display: flex;
     flex-flow: row nowrap;
@@ -42,5 +48,6 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    font-size: 1.5rem;
   }
 }

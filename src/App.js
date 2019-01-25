@@ -64,6 +64,7 @@ class App extends Component {
     } = this.state;
     return (
       <div className="App">
+        <div className="bg-image sunny" />
         <Header unit={unit} />
         <main>
           <MainCard unit={unit} weather={currentWeather} />
