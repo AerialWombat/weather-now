@@ -1,32 +1,34 @@
 .wrapper {
   height: 100%;
   width: 100%;
-  padding: 1rem;
+  padding: .5rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr 35%;
   grid-template-areas:
-    "icon icon currentTemp currentTemp"
-    "icon icon summary summary"
+    "icon currentTemp currentTemp currentTemp"
+    "icon summary summary summary"
     "sideInfo sideInfo sideInfo sideInfo";
   border-radius: 15px;
-  box-shadow: 1px 1px 3px #222;
+  box-shadow: 1px 1px 3px #333;
   background: #f6bd26;
   color: #fafef9;
 
   .icon {
     grid-area: icon;
     display: flex;
+    justify-content: center;
     align-items: center;
-    font-size: 8rem;
+    font-size: 4rem;
   }
 
   .currentTemp {
     grid-area: currentTemp;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    font-size: 3rem;
+    padding-left: .5rem;
+    font-size: 2rem;
   }
 
   .summary {
@@ -34,20 +36,29 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding-left: .5rem;
+    font-size: 1rem
   }
 
   .info {
     grid-area: sideInfo;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: .5rem;
+    border-top: solid 1px #f4e7c3;
   }
 
   .dataPoint {
     display: flex;
-    flex-flow: column;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
+
+    p {
+      font-weight: bold;
+    }
   }
 }
