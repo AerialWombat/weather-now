@@ -20,12 +20,14 @@ header {
   }
 
   .searchBar {
+    width: 100%;
     margin: 0.5rem 0;
     display: flex;
     flex-flow: row;
-    justify-content: space-between;
+    justify-content: center;
 
     .search {
+      width: 50%;
       margin: 0 0.5rem;
       border: none;
       background-color: transparent;
@@ -35,8 +37,9 @@ header {
     }
 
     .submit {
+      width: 20%;
       min-height: 32px;
-      min-width: 96px;
+      max-width: 156px;
       border: none;
       border-radius: 5px;
       background-color: hsla(0, 0%, 10%, 0.6);
