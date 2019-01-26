@@ -1,6 +1,42 @@
 .wrapper {
-  //   border: solid 1px orange;
+  height: 25%;
   display: flex;
-  flex-flow: row;
-  margin: 1rem 0;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  margin: 1.25rem 0;
+  padding: 0.5rem;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px #333;
+  background: darkcyan;
+  color: #fafef9;
+
+  .summary {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      height: 70%;
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+  }
+
+  .dataPoint {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+
+    p {
+      font-weight: bold;
+    }
+  }
 }
