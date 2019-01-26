@@ -35,12 +35,14 @@ textarea:focus {
   min-width: 100vw;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 20vh 1fr 10vh;
+  grid-template-rows: 20vh 1fr 7.5vh;
   grid-auto-columns: 100%;
   grid-template-areas:
     "header"
     "main"
     "footer";
+
+  color: #eef2ed;
 
   .bg-image {
     position: fixed;
@@ -51,7 +53,7 @@ textarea:focus {
     z-index: -10;
     background: url("./rainy.jpg") #222;
     background-size: cover;
-    filter: blur(5px);
+    filter: blur(5px) brightness(65%);
     transform: scale(1.1); //Hides edges from blurring
   }
 

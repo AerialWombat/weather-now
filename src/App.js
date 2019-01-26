@@ -87,4 +87,7 @@ export default App;
 //Footer: "Made by", "Powered by Dark Sky"
 
 //Check if location, if not, show a default message instead asking for search or something
-//Change state data on unit button check/uncheck
+//Change state data on unit button check/uncheck (either do conversion or do another request to API)
+//Change background based on current "icon"
+//change card colors based on icon
+//conditional rendering depending on unit types

@@ -43,6 +43,3 @@ const MainCard = ({ unit, weather }) => {
 };
 
 export default MainCard;
-
-//change color based on icon
-//conditional rendering with given unit type
