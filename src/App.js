@@ -50,7 +50,20 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    console.log(this.state);
+    console.log("App component mounted");
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.setState({
+          location: {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+          }
+        });
+      });
+    } else {
+      console.log("Geolocation is not available");
+      // Render a N/A view
+    }
   };
 
   render() {
@@ -86,8 +99,10 @@ export default App;
 //Display container: main display, 3 side displays
 //Footer: "Made by", "Powered by Dark Sky"
 
+//Get weather data via coords and get location name via reverse geocoding
 //Check if location, if not, show a default message instead asking for search or something
 //Change state data on unit button check/uncheck (either do conversion or do another request to API)
 //Change background based on current "icon"
 //change card colors based on icon
+//global color variables to import
 //conditional rendering depending on unit types
