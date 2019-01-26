@@ -52,13 +52,18 @@ textarea:focus {
     background: url("./rainy.jpg") #222;
     background-size: cover;
     filter: blur(5px);
-    transform: scale(1.1); //Hides blurring edges
+    transform: scale(1.1); //Hides edges from blurring
   }
 
   .sunny {
     background: url("./sunny.jpg");
     background-size: cover;
   }
+
+  /*
+  * Exploring different ways to have blurred,
+  * changing background
+  */
   // .bg-image {
   //   position: fixed;
   //   top: 0;
@@ -88,7 +93,7 @@ textarea:focus {
   }
 
   main {
-    padding: .5rem 1rem;
+    padding: 0.5rem 3.5rem;
     grid-area: main;
     max-height: 100%;
     display: grid;
@@ -97,6 +102,10 @@ textarea:focus {
     grid-template-areas:
       "mainCard"
       "sideCards";
+
+    .sideCardContainer {
+      padding: 0.5rem;
+    }
   }
 
   footer {
