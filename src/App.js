@@ -106,5 +106,6 @@ export default App;
 //change card colors based on icon
 //global color variables to import
 //conditional rendering depending on unit types
+//Refactor "datapoints" into components
 
 //Allow user to search for a location. Implement search box as another component

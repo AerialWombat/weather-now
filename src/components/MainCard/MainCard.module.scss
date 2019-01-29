@@ -13,7 +13,7 @@
   box-shadow: 1px 1px 5px #333;
   background: #f6bd26;
 
-  .icon {
+  .mainIcon {
     grid-area: icon;
     display: flex;
     justify-content: center;
@@ -48,21 +48,19 @@
     border-top: solid 1px #f4e7c3;
   }
 
-  .dataPoint {
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+  @media screen and (min-width: 760px) {
     font-size: 1.25rem;
 
-    .icon {
-      height: 3rem;
-      font-size: 2rem;
+    .mainIcon {
+      font-size: 6rem;
     }
+  }
 
-    p {
-      font-weight: bold;
+  @media screen and (min-width: 1140px) {
+    max-height: 70%;
+
+    .mainIcon {
+      font-size: 8rem;
     }
   }
 }
