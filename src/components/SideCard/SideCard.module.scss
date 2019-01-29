@@ -9,29 +9,54 @@
   box-shadow: 1px 1px 5px #333;
   background: darkcyan;
 
-  .summary {
+  // .summary {
+  //   // height: 100%;
+  //   width: 15%;
+  //   display: flex;
+  //   flex-flow: column;
+  //   justify-content: center;
+  //   align-items: center;
+
+  //   .icon {
+  //     height: 3rem;
+  //     font-size: 2rem;
+  //   }
+
+  //   p {
+  //     font-weight: bold;
+  //   }
+  // }
+
+  // .dataPoint {
+  //   // height: 100%;
+  //   display: flex;
+  //   flex-flow: column;
+  //   justify-content: center;
+  //   align-items: center;
+  //   font-size: 1rem;
+
+  //   .icon {
+  //     height: 3rem;
+  //     font-size: 2rem;
+  //   }
+
+  //   p {
+  //     font-weight: bold;
+  //   }
+  // }
+
+  .dataPoint {
     height: 100%;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    font-size: 1.25rem;
 
     .icon {
       height: 3rem;
       font-size: 2rem;
     }
-
-    p {
-      font-weight: bold;
-    }
-  }
-
-  .dataPoint {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
 
     p {
       font-weight: bold;
