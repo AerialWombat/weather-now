@@ -62,7 +62,7 @@ class App extends Component {
       });
     } else {
       console.log("Geolocation is not available");
-      // Render a N/A view
+      // Render a N/A view via setting a state value
     }
   };
 
@@ -106,3 +106,5 @@ export default App;
 //change card colors based on icon
 //global color variables to import
 //conditional rendering depending on unit types
+
+//Allow user to search for a location. Implement search box as another component
