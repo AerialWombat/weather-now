@@ -9,49 +9,13 @@
   box-shadow: 1px 1px 5px #333;
   background: darkcyan;
 
-  // .summary {
-  //   // height: 100%;
-  //   width: 15%;
-  //   display: flex;
-  //   flex-flow: column;
-  //   justify-content: center;
-  //   align-items: center;
-
-  //   .icon {
-  //     height: 3rem;
-  //     font-size: 2rem;
-  //   }
-
-  //   p {
-  //     font-weight: bold;
-  //   }
-  // }
-
-  // .dataPoint {
-  //   // height: 100%;
-  //   display: flex;
-  //   flex-flow: column;
-  //   justify-content: center;
-  //   align-items: center;
-  //   font-size: 1rem;
-
-  //   .icon {
-  //     height: 3rem;
-  //     font-size: 2rem;
-  //   }
-
-  //   p {
-  //     font-weight: bold;
-  //   }
-  // }
-
-  .dataPoint {
+  .summary {
     height: 100%;
+    width: 20%;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.25rem;
 
     .icon {
       height: 3rem;
@@ -61,5 +25,18 @@
     p {
       font-weight: bold;
     }
+  }
+
+  @media screen and (min-width: 760px) {
+    .summary {
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1140px) {
+    height: 30%;
+    margin: 0;
   }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import WeatherIcon from "react-icons-weather";
+import DataDisplay from "../DataDisplay/DataDisplay.js";
 import styles from "./MainCard.module.scss";
 
 const MainCard = ({ unit, weather }) => {
@@ -14,29 +15,17 @@ const MainCard = ({ unit, weather }) => {
   } = weather;
   return (
     <div className={styles.wrapper}>
-      <WeatherIcon className={styles.icon} name="darksky" iconId={icon} />
+      <WeatherIcon className={styles.mainIcon} name="darksky" iconId={icon} />
       <h1 className={styles.currentTemp}>
         {currentTemp}
         &#8451;
       </h1>
       <h3 className={styles.summary}>{summary}</h3>
       <div className={styles.info}>
-        <div className={styles.dataPoint}>
-          <i className="wi wi-thermometer" />
-          <p>{highTemp}&#176;</p>
-        </div>
-        <div className={styles.dataPoint}>
-          <i className="wi wi-thermometer-exterior" />
-          <p>{lowTemp}&#176;</p>
-        </div>
-        <div className={styles.dataPoint}>
-          <i className="wi wi-strong-wind" />
-          <p>{windSpeed}m/s</p>
-        </div>
-        <div className={styles.dataPoint}>
-          <i className="wi wi-raindrop" />
-          <p>{precipChance}%</p>
-        </div>
+        <DataDisplay dataType="highTemp" value={highTemp} />
+        <DataDisplay dataType="lowTemp" value={lowTemp} />
+        <DataDisplay dataType="windSpeed" value={windSpeed} />
+        <DataDisplay dataType="precipChance" value={precipChance} />
       </div>
     </div>
   );
