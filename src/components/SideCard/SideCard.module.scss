@@ -38,5 +38,11 @@
   @media screen and (min-width: 1140px) {
     height: 30%;
     margin: 0;
+
+    .summary {
+      p {
+        font-size: 1.25rem;
+      }
+    }
   }
 }

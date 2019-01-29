@@ -22,10 +22,16 @@ const MainCard = ({ unit, weather }) => {
       </h1>
       <h3 className={styles.summary}>{summary}</h3>
       <div className={styles.info}>
+        {/*
         <DataDisplay dataType="highTemp" value={highTemp} />
         <DataDisplay dataType="lowTemp" value={lowTemp} />
         <DataDisplay dataType="windSpeed" value={windSpeed} />
         <DataDisplay dataType="precipChance" value={precipChance} />
+        */}
+        <DataDisplay icon="thermometer" label="High" value={highTemp} />
+        <DataDisplay icon="thermometer-exterior" label="Low" value={lowTemp} />
+        <DataDisplay icon="strong-wind" label="Wind" value={windSpeed} />
+        <DataDisplay icon="raindrop" label="Rain" value={precipChance} />
       </div>
     </div>
   );
