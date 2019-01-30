@@ -4,10 +4,13 @@ import MainCard from "./components/MainCard/MainCard";
 import SideCard from "./components/SideCard/SideCard";
 import Footer from "./components/Footer/Footer";
 import "./App.scss";
+import { getCiphers } from "tls";
 
 // import typography from "./utils/typography";
 
 // typography.injectStyles();
+
+const API_KEY = "2606ebfb674e627733ad90d0f6c1745d";
 
 class App extends Component {
   constructor() {
@@ -20,31 +23,31 @@ class App extends Component {
         //City||Town name
       },
       currentWeather: {
-        summary: "Clear throughout the day",
-        icon: "clear-day",
-        windSpeed: "2.32",
-        precipChance: 23,
-        currentTemp: -4.84,
-        highTemp: -6.62,
-        lowTemp: -14.71
+        summary: "",
+        icon: "cloudy",
+        windSpeed: 0,
+        precipChance: 0,
+        currentTemp: 0,
+        highTemp: 0,
+        lowTemp: 0
       },
       dayOneWeather: {
-        icon: "snow",
+        icon: "cloudy",
         precipChance: 0,
-        highTemp: 0.93,
-        lowTemp: -2.05
+        highTemp: 0,
+        lowTemp: 0
       },
       dayTwoWeather: {
-        icon: "fog",
+        icon: "cloudy",
         precipChance: 54,
         highTemp: 11.92,
         lowTemp: 11.16
       },
       dayThreeWeather: {
-        icon: "rain",
-        precipChance: 73,
-        highTemp: 12.58,
-        lowTemp: -1.98
+        icon: "cloudy",
+        precipChance: 0,
+        highTemp: 0,
+        lowTemp: 0
       }
     };
   }
@@ -59,6 +62,52 @@ class App extends Component {
             longitude: position.coords.longitude
           }
         });
+        fetch(
+          `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${API_KEY}/${
+            position.coords.latitude
+          },${position.coords.longitude}`,
+          {
+            method: "GET",
+            headers: {
+              "Access-Control-Allow-Origin": "*"
+            }
+          }
+        )
+          .then(res =>
+            res.json().then(data => {
+              const { currently, daily } = data;
+              this.setState({
+                currentWeather: {
+                  summary: currently.summary,
+                  icon: currently.icon,
+                  windSpeed: currently.windSpeed,
+                  precipChance: currently.precipProbability * 100,
+                  currentTemp: currently.temperature,
+                  highTemp: daily.data[0].temperatureHigh,
+                  lowTemp: daily.data[0].temperatureLow
+                },
+                dayOneWeather: {
+                  icon: daily.data[1].icon,
+                  precipChance: daily.data[1].precipProbability * 100,
+                  highTemp: daily.data[1].temperatureHigh,
+                  lowTemp: daily.data[1].temperatureLow
+                },
+                dayTwoWeather: {
+                  icon: daily.data[2].icon,
+                  precipChance: daily.data[2].precipProbability * 100,
+                  highTemp: daily.data[2].temperatureHigh,
+                  lowTemp: daily.data[2].temperatureLow
+                },
+                dayThreeWeather: {
+                  icon: daily.data[3].icon,
+                  precipChance: daily.data[3].precipProbability * 100,
+                  highTemp: daily.data[3].temperatureHigh,
+                  lowTemp: daily.data[3].temperatureLow
+                }
+              });
+            })
+          )
+          .catch(err => console.log(err));
       });
     } else {
       console.log("Geolocation is not available");
@@ -95,10 +144,6 @@ class App extends Component {
 
 export default App;
 
-//Header: Title, location name, searchbar later
-//Display container: main display, 3 side displays
-//Footer: "Made by", "Powered by Dark Sky"
-
 //Get weather data via coords and get location name via reverse geocoding
 //Check if location, if not, show a default message instead asking for search or something
 //Change state data on unit button check/uncheck (either do conversion or do another request to API)
@@ -106,6 +151,6 @@ export default App;
 //change card colors based on icon
 //global color variables to import
 //conditional rendering depending on unit types
-//Refactor "datapoints" into components
+//Add link to footer for Dark Sky and also maybe Github
 
 //Allow user to search for a location. Implement search box as another component

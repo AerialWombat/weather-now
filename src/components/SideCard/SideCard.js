@@ -11,18 +11,6 @@ const SideCard = ({ unit, weather }) => {
         <WeatherIcon name="darksky" iconId={icon} className={styles.icon} />
         <p>{icon}</p>
       </div>
-      {/*<div className={styles.dataPoint}>
-        <i className={`wi wi-thermometer ${styles.icon}`} />
-        <p>{highTemp}&#176;</p>
-      </div>
-      <div className={styles.dataPoint}>
-        <i className={`wi wi-thermometer-exterior ${styles.icon}`} />
-        <p>{lowTemp}&#176;</p>
-      </div>
-      <div className={styles.dataPoint}>
-        <i className={`wi wi-raindrop ${styles.icon}`} />
-        <p>{precipChance}%</p>
-  </div>*/}
       <DataDisplay icon="thermometer" label="High" value={highTemp} />
       <DataDisplay icon="thermometer-exterior" label="Low" value={lowTemp} />
       <DataDisplay icon="raindrop" label="Rain" value={precipChance} />
