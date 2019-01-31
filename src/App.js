@@ -10,17 +10,18 @@ import { getCiphers } from "tls";
 
 // typography.injectStyles();
 
-const API_KEY = "**REMOVED**";
+const DARKSKY_API_KEY = "**REMOVED**";
+const GEO_API_KEY = "**REMOVED**";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      unit: "SI",
+      unit: "si",
       location: {
         latitude: 0,
-        longitude: 0
-        //City||Town name
+        longitude: 0,
+        name: ""
       },
       currentWeather: {
         summary: "",
@@ -62,10 +63,11 @@ class App extends Component {
             longitude: position.coords.longitude
           }
         });
+
         fetch(
-          `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${API_KEY}/${
+          `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${DARKSKY_API_KEY}/${
             position.coords.latitude
-          },${position.coords.longitude}`,
+          },${position.coords.longitude}?units=${this.state.unit}`,
           {
             method: "GET",
             headers: {
@@ -82,32 +84,46 @@ class App extends Component {
                   icon: currently.icon,
                   windSpeed: currently.windSpeed,
                   precipChance: currently.precipProbability * 100,
-                  currentTemp: currently.temperature,
-                  highTemp: daily.data[0].temperatureHigh,
-                  lowTemp: daily.data[0].temperatureLow
+                  currentTemp: Math.round(currently.temperature),
+                  highTemp: Math.round(daily.data[0].temperatureHigh),
+                  lowTemp: Math.round(daily.data[0].temperatureLow)
                 },
                 dayOneWeather: {
                   icon: daily.data[1].icon,
                   precipChance: daily.data[1].precipProbability * 100,
-                  highTemp: daily.data[1].temperatureHigh,
-                  lowTemp: daily.data[1].temperatureLow
+                  highTemp: Math.round(daily.data[1].temperatureHigh),
+                  lowTemp: Math.round(daily.data[1].temperatureLow)
                 },
                 dayTwoWeather: {
                   icon: daily.data[2].icon,
                   precipChance: daily.data[2].precipProbability * 100,
-                  highTemp: daily.data[2].temperatureHigh,
-                  lowTemp: daily.data[2].temperatureLow
+                  highTemp: Math.round(daily.data[2].temperatureHigh),
+                  lowTemp: Math.round(daily.data[2].temperatureLow)
                 },
                 dayThreeWeather: {
                   icon: daily.data[3].icon,
                   precipChance: daily.data[3].precipProbability * 100,
-                  highTemp: daily.data[3].temperatureHigh,
-                  lowTemp: daily.data[3].temperatureLow
+                  highTemp: Math.round(daily.data[3].temperatureHigh),
+                  lowTemp: Math.round(daily.data[3].temperatureLow)
                 }
               });
             })
           )
           .catch(err => console.log(err));
+
+        fetch(
+          `https://cors-anywhere.herokuapp.com/https://api.geocod.io/v1.3/reverse?q=${
+            position.coords.latitude
+          },${position.coords.longitude}&api_key=${GEO_API_KEY}`
+        ).then(res =>
+          res.json().then(data => {
+            this.setState({
+              location: {
+                name: `${data.results[0].address_components.city}`
+              }
+            });
+          })
+        );
       });
     } else {
       console.log("Geolocation is not available");
@@ -127,7 +143,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="bg-image sunny" />
-        <Header unit={unit} />
+        <Header location={location} unit={unit} />
         <main>
           <MainCard unit={unit} weather={currentWeather} />
           <div className="sideCardContainer">
@@ -149,8 +165,9 @@ export default App;
 //Change state data on unit button check/uncheck (either do conversion or do another request to API)
 //Change background based on current "icon"
 //change card colors based on icon
-//global color variables to import
 //conditional rendering depending on unit types
 //Add link to footer for Dark Sky and also maybe Github
 
 //Allow user to search for a location. Implement search box as another component
+
+//37.5451812,-77.4529756 Richmond coords
