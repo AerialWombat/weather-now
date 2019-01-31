@@ -3,7 +3,8 @@ import Header from "./components/Header/Header";
 import MainCard from "./components/MainCard/MainCard";
 import SideCard from "./components/SideCard/SideCard";
 import Footer from "./components/Footer/Footer";
-import "./App.scss";
+import styles from "./App.module.scss";
+import classNames from "classnames/bind";
 
 const DARKSKY_API_KEY = "**REMOVED**";
 const GEO_API_KEY = "**REMOVED**";
@@ -12,7 +13,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      unit: "si", //"us" or "si"
+      unit: "si",
       location: {
         latitude: 0,
         longitude: 0,
@@ -59,6 +60,7 @@ class App extends Component {
           }
         });
 
+        // Fetching weather data and setting state
         fetch(
           `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${DARKSKY_API_KEY}/${
             position.coords.latitude
@@ -106,6 +108,7 @@ class App extends Component {
           )
           .catch(err => console.log(err));
 
+        // Fetching a city name via reverse geocoding
         fetch(
           `https://cors-anywhere.herokuapp.com/https://api.geocod.io/v1.3/reverse?q=${
             position.coords.latitude
@@ -135,13 +138,31 @@ class App extends Component {
       dayTwoWeather,
       dayThreeWeather
     } = this.state;
+    // Set classes for background image based on icon
+    {
+      let cx = classNames.bind(styles);
+      var bgClasses = cx({
+        "bg-image": true,
+        sunny: currentWeather.icon === "clear-day",
+        night: currentWeather.icon === "clear-night",
+        rain: currentWeather.icon === "rain",
+        winter:
+          currentWeather.icon === "snow" || currentWeather.icon === "sleet",
+        windy: currentWeather.icon === "wind",
+        fog: currentWeather.icon === "fog",
+        cloudy:
+          currentWeather.icon === "cloudy" ||
+          currentWeather.icon === "partly-cloudy-day" ||
+          currentWeather.icon === "partly-cloudy-night"
+      });
+    }
     return (
-      <div className="App">
-        <div className="bg-image sunny" />
+      <div className={styles.App}>
+        <div className={bgClasses} />
         <Header location={location} unit={unit} />
         <main>
           <MainCard unit={unit} weather={currentWeather} />
-          <div className="sideCardContainer">
+          <div className={styles.sideCardContainer}>
             <SideCard unit={unit} weather={dayOneWeather} />
             <SideCard unit={unit} weather={dayTwoWeather} />
             <SideCard unit={unit} weather={dayThreeWeather} />
@@ -158,12 +179,13 @@ export default App;
 //Change state data on unit button check/uncheck (either do conversion or do another request to API)
 
 //Change background based on current "icon"
-//change card colors based on icon
 
 //Get weather data via coords and get location name via reverse geocoding
 //Check if location, if not, show a default message instead asking for search or something
 //Allow user to search for a location. Implement search box as another component
 
 //Add link to footer for Dark Sky and also maybe Github
+
+//Optimize images
 
 //37.5451812,-77.4529756 Richmond coords
