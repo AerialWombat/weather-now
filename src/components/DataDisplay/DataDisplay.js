@@ -5,10 +5,10 @@ const DataDisplay = ({ icon, label, value, unit }) => {
   let symbol = "";
   switch (icon) {
     case "thermometer":
-      symbol = "°";
+      symbol = unit === "si" ? "°C" : "°F";
       break;
     case "thermometer-exterior":
-      symbol = "°";
+      symbol = unit === "si" ? "°C" : "°F";
       break;
     case "raindrop":
       symbol = "%";

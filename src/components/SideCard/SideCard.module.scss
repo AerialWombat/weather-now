@@ -21,16 +21,16 @@
       display: flex;
       align-items: center;
       height: 100%;
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
   }
 
-  @media screen and (min-width: 1140px) {
-    height: 30%;
-    margin: 0;
+  @media screen and (min-width: 760px) {
+    height: 25%;
+    // margin: 0;
     .summary {
       .icon {
-        font-size: 3rem;
+        font-size: 3.5rem;
       }
     }
   }
