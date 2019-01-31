@@ -18,16 +18,10 @@ const MainCard = ({ unit, weather }) => {
       <WeatherIcon className={styles.mainIcon} name="darksky" iconId={icon} />
       <h1 className={styles.currentTemp}>
         {currentTemp}
-        &#8451;
+        {unit === "si" ? "°C" : "°F"}
       </h1>
       <h3 className={styles.summary}>{summary}</h3>
       <div className={styles.info}>
-        {/*
-        <DataDisplay dataType="highTemp" value={highTemp} />
-        <DataDisplay dataType="lowTemp" value={lowTemp} />
-        <DataDisplay dataType="windSpeed" value={windSpeed} />
-        <DataDisplay dataType="precipChance" value={precipChance} />
-        */}
         <DataDisplay
           icon="thermometer"
           label="High"
