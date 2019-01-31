@@ -28,10 +28,30 @@ const MainCard = ({ unit, weather }) => {
         <DataDisplay dataType="windSpeed" value={windSpeed} />
         <DataDisplay dataType="precipChance" value={precipChance} />
         */}
-        <DataDisplay icon="thermometer" label="High" value={highTemp} />
-        <DataDisplay icon="thermometer-exterior" label="Low" value={lowTemp} />
-        <DataDisplay icon="strong-wind" label="Wind" value={windSpeed} />
-        <DataDisplay icon="raindrop" label="Rain" value={precipChance} />
+        <DataDisplay
+          icon="thermometer"
+          label="High"
+          value={highTemp}
+          unit={unit}
+        />
+        <DataDisplay
+          icon="thermometer-exterior"
+          label="Low"
+          value={lowTemp}
+          unit={unit}
+        />
+        <DataDisplay
+          icon="strong-wind"
+          label="Wind"
+          value={windSpeed}
+          unit={unit}
+        />
+        <DataDisplay
+          icon="raindrop"
+          label="Rain"
+          value={precipChance}
+          unit={unit}
+        />
       </div>
     </div>
   );

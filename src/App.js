@@ -17,7 +17,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      unit: "si",
+      unit: "si", //"us" or "si"
       location: {
         latitude: 0,
         longitude: 0,
