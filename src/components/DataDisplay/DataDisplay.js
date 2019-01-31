@@ -35,12 +35,3 @@ const DataDisplay = ({ icon, label, value, unit }) => {
 };
 
 export default DataDisplay;
-
-// Determine type of data throuch icon
-// Choose appropriate symbol
-// if windspeed
-// choose based on current unit
-
-// Temperature: degree symbol
-// Windspeed: MPH or m/s
-// Rain Chance: percent symbol
