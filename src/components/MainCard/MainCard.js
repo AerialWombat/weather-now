@@ -37,4 +37,6 @@ const MainCard = ({ unit, weather }) => {
   );
 };
 
+//&#176;
+
 export default MainCard;
