@@ -6,8 +6,10 @@
   align-items: center;
 
   .icon {
+    display: flex;
+    align-items: center;
     height: 3rem;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
   }
 
   span {

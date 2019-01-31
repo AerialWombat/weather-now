@@ -21,7 +21,7 @@ class App extends Component {
       },
       currentWeather: {
         summary: "",
-        icon: "cloudy",
+        icon: "clear-day",
         windSpeed: 0,
         precipChance: 0,
         currentTemp: 0,
@@ -117,7 +117,9 @@ class App extends Component {
           res.json().then(data => {
             this.setState({
               location: {
-                name: `${data.results[0].address_components.city}`
+                name: `${data.results[0].address_components.city}, ${
+                  data.results[0].address_components.state
+                }`
               }
             });
           })
