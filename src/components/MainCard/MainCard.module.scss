@@ -11,7 +11,7 @@
     "sideInfo sideInfo sideInfo sideInfo";
   border-radius: 15px;
   box-shadow: 1px 1px 5px #333;
-  background: #f6bd26;
+  // background: #f6bd26;
 
   .mainIcon {
     grid-area: icon;
@@ -63,4 +63,32 @@
       font-size: 8rem;
     }
   }
+}
+
+.sunny {
+  background-color: #eab96d;
+}
+
+.night {
+  background-color: #2f2f2f;
+}
+
+.rain {
+  background-color: #447ad0;
+}
+
+.winter {
+  background-color: #fafafa;
+}
+
+.windy {
+  background-color: #78909c;
+}
+
+.fog {
+  background-color: #b6aba9;
+}
+
+.cloudy {
+  background-color: #455a64;
 }

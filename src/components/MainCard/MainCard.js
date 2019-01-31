@@ -1,6 +1,7 @@
 import React from "react";
 import WeatherIcon from "react-icons-weather";
 import DataDisplay from "../DataDisplay/DataDisplay.js";
+import classNames from "classnames/bind";
 import styles from "./MainCard.module.scss";
 
 const MainCard = ({ unit, weather }) => {
@@ -13,8 +14,24 @@ const MainCard = ({ unit, weather }) => {
     highTemp,
     lowTemp
   } = weather;
+
+  let cx = classNames.bind(styles);
+  let wrapperClasses = cx({
+    wrapper: true,
+    sunny: icon === "clear-day",
+    night: icon === "clear-night",
+    rain: icon === "rain",
+    winter: icon === "snow" || icon === "sleet",
+    windy: icon === "wind",
+    fog: icon === "fog",
+    cloudy:
+      icon === "cloudy" ||
+      icon === "partly-cloudy-day" ||
+      icon === "partly-cloudy-night"
+  });
+
   return (
-    <div className={styles.wrapper}>
+    <div className={wrapperClasses}>
       <WeatherIcon className={styles.mainIcon} name="darksky" iconId={icon} />
       <h1 className={styles.currentTemp}>
         {currentTemp}
@@ -50,7 +67,5 @@ const MainCard = ({ unit, weather }) => {
     </div>
   );
 };
-
-//&#176;
 
 export default MainCard;

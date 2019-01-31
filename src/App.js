@@ -4,11 +4,6 @@ import MainCard from "./components/MainCard/MainCard";
 import SideCard from "./components/SideCard/SideCard";
 import Footer from "./components/Footer/Footer";
 import "./App.scss";
-import { getCiphers } from "tls";
-
-// import typography from "./utils/typography";
-
-// typography.injectStyles();
 
 const DARKSKY_API_KEY = "2606ebfb674e627733ad90d0f6c1745d";
 const GEO_API_KEY = "c15d0a0445d54d403bca5a6afd55191db33bc3d";
@@ -160,14 +155,15 @@ class App extends Component {
 
 export default App;
 
-//Get weather data via coords and get location name via reverse geocoding
-//Check if location, if not, show a default message instead asking for search or something
 //Change state data on unit button check/uncheck (either do conversion or do another request to API)
+
 //Change background based on current "icon"
 //change card colors based on icon
-//conditional rendering depending on unit types
-//Add link to footer for Dark Sky and also maybe Github
 
+//Get weather data via coords and get location name via reverse geocoding
+//Check if location, if not, show a default message instead asking for search or something
 //Allow user to search for a location. Implement search box as another component
+
+//Add link to footer for Dark Sky and also maybe Github
 
 //37.5451812,-77.4529756 Richmond coords
