@@ -10,9 +10,24 @@ const SideCard = ({ unit, weather }) => {
       <div className={styles.summary}>
         <WeatherIcon name="darksky" iconId="sleet" className={styles.icon} />
       </div>
-      <DataDisplay icon="thermometer" label="High" value={highTemp} />
-      <DataDisplay icon="thermometer-exterior" label="Low" value={lowTemp} />
-      <DataDisplay icon="raindrop" label="Rain" value={precipChance} />
+      <DataDisplay
+        icon="thermometer"
+        label="High"
+        value={highTemp}
+        unit={unit}
+      />
+      <DataDisplay
+        icon="thermometer-exterior"
+        label="Low"
+        value={lowTemp}
+        unit={unit}
+      />
+      <DataDisplay
+        icon="raindrop"
+        label="Rain"
+        value={precipChance}
+        unit={unit}
+      />
     </div>
   );
 };
