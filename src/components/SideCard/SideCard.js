@@ -8,8 +8,7 @@ const SideCard = ({ unit, weather }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.summary}>
-        <WeatherIcon name="darksky" iconId={icon} className={styles.icon} />
-        <p>{icon}</p>
+        <WeatherIcon name="darksky" iconId="sleet" className={styles.icon} />
       </div>
       <DataDisplay icon="thermometer" label="High" value={highTemp} />
       <DataDisplay icon="thermometer-exterior" label="Low" value={lowTemp} />
