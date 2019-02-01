@@ -14,6 +14,7 @@ class App extends Component {
     super();
     this.state = {
       unit: "si",
+      searchQuery: "",
       location: {
         latitude: 0,
         longitude: 0,
@@ -61,52 +62,11 @@ class App extends Component {
         });
 
         // Fetching weather data and setting state
-        fetch(
-          `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${DARKSKY_API_KEY}/${
-            position.coords.latitude
-          },${position.coords.longitude}?units=${this.state.unit}`,
-          {
-            method: "GET",
-            headers: {
-              "Access-Control-Allow-Origin": "*"
-            }
-          }
-        )
-          .then(res =>
-            res.json().then(data => {
-              const { currently, daily } = data;
-              this.setState({
-                currentWeather: {
-                  summary: currently.summary,
-                  icon: currently.icon,
-                  windSpeed: currently.windSpeed,
-                  precipChance: currently.precipProbability * 100,
-                  currentTemp: Math.round(currently.temperature),
-                  highTemp: Math.round(daily.data[0].temperatureHigh),
-                  lowTemp: Math.round(daily.data[0].temperatureLow)
-                },
-                dayOneWeather: {
-                  icon: daily.data[1].icon,
-                  precipChance: daily.data[1].precipProbability * 100,
-                  highTemp: Math.round(daily.data[1].temperatureHigh),
-                  lowTemp: Math.round(daily.data[1].temperatureLow)
-                },
-                dayTwoWeather: {
-                  icon: daily.data[2].icon,
-                  precipChance: daily.data[2].precipProbability * 100,
-                  highTemp: Math.round(daily.data[2].temperatureHigh),
-                  lowTemp: Math.round(daily.data[2].temperatureLow)
-                },
-                dayThreeWeather: {
-                  icon: daily.data[3].icon,
-                  precipChance: daily.data[3].precipProbability * 100,
-                  highTemp: Math.round(daily.data[3].temperatureHigh),
-                  lowTemp: Math.round(daily.data[3].temperatureLow)
-                }
-              });
-            })
-          )
-          .catch(err => console.log(err));
+        this.getWeather(
+          position.coords.latitude,
+          position.coords.longitude,
+          this.state.unit
+        );
 
         // Fetching a city name via reverse geocoding
         fetch(
@@ -131,6 +91,85 @@ class App extends Component {
     }
   };
 
+  searchChange = event => {
+    this.setState({ searchQuery: event.target.value });
+  };
+
+  searchSubmit = event => {
+    this.getCoord(this.state.searchQuery);
+    this.getWeather(
+      this.state.location.latitude,
+      this.state.location.longitude,
+      this.state.unit
+    );
+    event.preventDefault();
+  };
+
+  getCoord = address => {
+    fetch(
+      `https://api.geocod.io/v1.3/geocode?q=${address}&api_key=**REMOVED**`
+    )
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          location: {
+            latitude: data.results[0].location.lat,
+            longitude: data.results[0].location.lng,
+            name: `${data.results[0].address_components.city}, 
+            ${data.results[0].address_components.state}`
+          }
+        })
+      )
+      .catch(error => console.log(error));
+  };
+
+  getWeather = (lat, long, unit) => {
+    fetch(
+      `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${DARKSKY_API_KEY}/${lat},${long}?units=${unit}`,
+      {
+        method: "GET",
+        headers: {
+          "Access-Control-Allow-Origin": "*"
+        }
+      }
+    )
+      .then(res =>
+        res.json().then(data => {
+          const { currently, daily } = data;
+          this.setState({
+            currentWeather: {
+              summary: currently.summary,
+              icon: currently.icon,
+              windSpeed: currently.windSpeed,
+              precipChance: currently.precipProbability * 100,
+              currentTemp: Math.round(currently.temperature),
+              highTemp: Math.round(daily.data[0].temperatureHigh),
+              lowTemp: Math.round(daily.data[0].temperatureLow)
+            },
+            dayOneWeather: {
+              icon: daily.data[1].icon,
+              precipChance: daily.data[1].precipProbability * 100,
+              highTemp: Math.round(daily.data[1].temperatureHigh),
+              lowTemp: Math.round(daily.data[1].temperatureLow)
+            },
+            dayTwoWeather: {
+              icon: daily.data[2].icon,
+              precipChance: daily.data[2].precipProbability * 100,
+              highTemp: Math.round(daily.data[2].temperatureHigh),
+              lowTemp: Math.round(daily.data[2].temperatureLow)
+            },
+            dayThreeWeather: {
+              icon: daily.data[3].icon,
+              precipChance: daily.data[3].precipProbability * 100,
+              highTemp: Math.round(daily.data[3].temperatureHigh),
+              lowTemp: Math.round(daily.data[3].temperatureLow)
+            }
+          });
+        })
+      )
+      .catch(err => console.log(err));
+  };
+
   render() {
     const {
       unit,
@@ -140,6 +179,7 @@ class App extends Component {
       dayTwoWeather,
       dayThreeWeather
     } = this.state;
+
     // Set classes for background image based on icon
     {
       let cx = classNames.bind(styles);
@@ -158,10 +198,16 @@ class App extends Component {
           currentWeather.icon === "partly-cloudy-night"
       });
     }
+
     return (
       <div className={styles.App}>
         <div className={bgClasses} />
-        <Header location={location} unit={unit} />
+        <Header
+          location={location}
+          unit={unit}
+          searchChange={this.searchChange}
+          searchSubmit={this.searchSubmit}
+        />
         <main>
           <MainCard unit={unit} weather={currentWeather} />
           <div className={styles.sideCardContainer}>
@@ -180,8 +226,6 @@ export default App;
 
 //Change state data on unit button check/uncheck (either do conversion or do another request to API)
 
-//Change background based on current "icon"
-
 //Get weather data via coords and get location name via reverse geocoding
 //Check if location, if not, show a default message instead asking for search or something
 //Allow user to search for a location. Implement search box as another component
@@ -189,5 +233,5 @@ export default App;
 //Add link to footer for Dark Sky and also maybe Github
 
 //Optimize images
-
-//37.5451812,-77.4529756 Richmond coords
+//Set precision of numbers to 0(1?) no decimals
+//Make card text dynamic based on brightness? (White text does not work on snow background color)
