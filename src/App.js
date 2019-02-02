@@ -37,9 +37,9 @@ class App extends Component {
       },
       dayTwoWeather: {
         icon: "cloudy",
-        precipChance: 54,
-        highTemp: 11.92,
-        lowTemp: 11.16
+        precipChance: 0,
+        highTemp: 0,
+        lowTemp: 0
       },
       dayThreeWeather: {
         icon: "cloudy",
@@ -77,6 +77,7 @@ class App extends Component {
           res.json().then(data => {
             this.setState({
               location: {
+                ...this.state.location,
                 name: `${data.results[0].address_components.city}, ${
                   data.results[0].address_components.state
                 }`
@@ -91,29 +92,6 @@ class App extends Component {
     }
   };
 
-  searchChange = event => {
-    this.setState({ searchQuery: event.target.value });
-  };
-
-  searchSubmit = event => {
-    this.getCoord(this.state.searchQuery).then(data => {
-      this.getWeather(
-        data.results[0].location.lat,
-        data.results[0].location.lng,
-        this.state.unit
-      );
-      this.setState({
-        location: {
-          latitude: data.results[0].location.lat,
-          longitude: data.results[0].location.lng,
-          name: `${data.results[0].address_components.city},
-          ${data.results[0].address_components.state}`
-        }
-      });
-    });
-    event.preventDefault();
-  };
-
   getCoord = address => {
     return new Promise((resolve, reject) => {
       fetch(
@@ -126,6 +104,7 @@ class App extends Component {
   };
 
   getWeather = (lat, long, unit) => {
+    console.log(`Getting ${unit} data`);
     fetch(
       `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${DARKSKY_API_KEY}/${lat},${long}?units=${unit}`,
       {
@@ -172,6 +151,44 @@ class App extends Component {
       .catch(err => console.log(err));
   };
 
+  searchChange = event => {
+    this.setState({ searchQuery: event.target.value });
+  };
+
+  searchSubmit = event => {
+    this.getCoord(this.state.searchQuery).then(data => {
+      this.getWeather(
+        data.results[0].location.lat,
+        data.results[0].location.lng,
+        this.state.unit
+      );
+      this.setState({
+        location: {
+          latitude: data.results[0].location.lat,
+          longitude: data.results[0].location.lng,
+          name: `${data.results[0].address_components.city},
+          ${data.results[0].address_components.state}`
+        }
+      });
+    });
+    event.preventDefault();
+  };
+
+  toggleUnit = () => {
+    this.setState(
+      {
+        unit: this.state.unit === "si" ? "us" : "si"
+      },
+      () => {
+        this.getWeather(
+          this.state.location.latitude,
+          this.state.location.longitude,
+          this.state.unit
+        );
+      }
+    );
+  };
+
   render() {
     const {
       unit,
@@ -209,6 +226,7 @@ class App extends Component {
           unit={unit}
           searchChange={this.searchChange}
           searchSubmit={this.searchSubmit}
+          toggleUnit={this.toggleUnit}
         />
         <main>
           <MainCard unit={unit} weather={currentWeather} />
