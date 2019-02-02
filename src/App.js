@@ -96,31 +96,33 @@ class App extends Component {
   };
 
   searchSubmit = event => {
-    this.getCoord(this.state.searchQuery);
-    this.getWeather(
-      this.state.location.latitude,
-      this.state.location.longitude,
-      this.state.unit
-    );
+    this.getCoord(this.state.searchQuery).then(data => {
+      this.getWeather(
+        data.results[0].location.lat,
+        data.results[0].location.lng,
+        this.state.unit
+      );
+      this.setState({
+        location: {
+          latitude: data.results[0].location.lat,
+          longitude: data.results[0].location.lng,
+          name: `${data.results[0].address_components.city},
+          ${data.results[0].address_components.state}`
+        }
+      });
+    });
     event.preventDefault();
   };
 
   getCoord = address => {
-    fetch(
-      `https://api.geocod.io/v1.3/geocode?q=${address}&api_key=**REMOVED**`
-    )
-      .then(res => res.json())
-      .then(data =>
-        this.setState({
-          location: {
-            latitude: data.results[0].location.lat,
-            longitude: data.results[0].location.lng,
-            name: `${data.results[0].address_components.city}, 
-            ${data.results[0].address_components.state}`
-          }
-        })
+    return new Promise((resolve, reject) => {
+      fetch(
+        `https://api.geocod.io/v1.3/geocode?q=${address}&api_key=**REMOVED**`
       )
-      .catch(error => console.log(error));
+        .then(res => res.json())
+        .then(data => resolve(data))
+        .catch(error => reject(error));
+    });
   };
 
   getWeather = (lat, long, unit) => {
@@ -141,26 +143,26 @@ class App extends Component {
               summary: currently.summary,
               icon: currently.icon,
               windSpeed: currently.windSpeed,
-              precipChance: currently.precipProbability * 100,
+              precipChance: Math.round(currently.precipProbability * 100),
               currentTemp: Math.round(currently.temperature),
               highTemp: Math.round(daily.data[0].temperatureHigh),
               lowTemp: Math.round(daily.data[0].temperatureLow)
             },
             dayOneWeather: {
               icon: daily.data[1].icon,
-              precipChance: daily.data[1].precipProbability * 100,
+              precipChance: Math.round(daily.data[1].precipProbability * 100),
               highTemp: Math.round(daily.data[1].temperatureHigh),
               lowTemp: Math.round(daily.data[1].temperatureLow)
             },
             dayTwoWeather: {
               icon: daily.data[2].icon,
-              precipChance: daily.data[2].precipProbability * 100,
+              precipChance: Math.round(daily.data[2].precipProbability * 100),
               highTemp: Math.round(daily.data[2].temperatureHigh),
               lowTemp: Math.round(daily.data[2].temperatureLow)
             },
             dayThreeWeather: {
               icon: daily.data[3].icon,
-              precipChance: daily.data[3].precipProbability * 100,
+              precipChance: Math.round(daily.data[3].precipProbability * 100),
               highTemp: Math.round(daily.data[3].temperatureHigh),
               lowTemp: Math.round(daily.data[3].temperatureLow)
             }
@@ -226,12 +228,11 @@ export default App;
 
 //Change state data on unit button check/uncheck (either do conversion or do another request to API)
 
-//Get weather data via coords and get location name via reverse geocoding
-//Check if location, if not, show a default message instead asking for search or something
-//Allow user to search for a location. Implement search box as another component
+//Check if location, if not, show a default message instead asking for search or something.
+// state value if location == "" render default no location view
 
 //Add link to footer for Dark Sky and also maybe Github
 
 //Optimize images
-//Set precision of numbers to 0(1?) no decimals
 //Make card text dynamic based on brightness? (White text does not work on snow background color)
+//Weather only updates on search button click? But location doesn't need click?
