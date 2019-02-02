@@ -4,8 +4,13 @@ import styles from "./Footer.module.scss";
 const Footer = () => {
   return (
     <footer>
-      <p>Made by AZ</p>
-      <p>Powered by Dark Sky</p>
+      <a href="https://darksky.net/poweredby/" target="_blank">
+        <img
+          src={require("../../darksky.png")}
+          alt="Powered by Dark Sky"
+          className={styles.attribution}
+        />{" "}
+      </a>
     </footer>
   );
 };
