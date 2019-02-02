@@ -5,7 +5,7 @@ import classNames from "classnames/bind";
 import styles from "./SideCard.module.scss";
 
 const SideCard = ({ unit, weather }) => {
-  const { icon, precipChance, highTemp, lowTemp } = weather;
+  const { day, icon, precipChance, highTemp, lowTemp } = weather;
 
   let cx = classNames.bind(styles);
   let wrapperClasses = cx({
@@ -26,6 +26,7 @@ const SideCard = ({ unit, weather }) => {
     <div className={wrapperClasses}>
       <div className={styles.summary}>
         <WeatherIcon name="darksky" iconId={icon} className={styles.icon} />
+        <p>{day}</p>
       </div>
       <DataDisplay
         icon="thermometer"
