@@ -1,9 +1,9 @@
 .wrapper {
-  height: 25%;
+  height: 27.5%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
-  margin: 1.25rem 0;
+  margin: 1rem 0;
   padding: 0.5rem;
   border-radius: 15px;
   box-shadow: 1px 1px 5px #333;
@@ -21,8 +21,13 @@
     .icon {
       display: flex;
       align-items: center;
-      height: 100%;
+      height: 77.5%;
       font-size: 2rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      font-weight: bold;
     }
   }
 
@@ -31,7 +36,11 @@
     // margin: 0;
     .summary {
       .icon {
-        font-size: 3.5rem;
+        font-size: 2.75rem;
+      }
+
+      p {
+        font-size: 1rem;
       }
     }
   }
@@ -51,6 +60,7 @@
 
 .winter {
   background-color: #fafafa;
+  color: #1b1b1b;
 }
 
 .windy {

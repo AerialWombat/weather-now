@@ -30,18 +30,21 @@ class App extends Component {
         lowTemp: 0
       },
       dayOneWeather: {
+        day: "",
         icon: "cloudy",
         precipChance: 0,
         highTemp: 0,
         lowTemp: 0
       },
       dayTwoWeather: {
+        day: "",
         icon: "cloudy",
         precipChance: 0,
         highTemp: 0,
         lowTemp: 0
       },
       dayThreeWeather: {
+        day: "",
         icon: "cloudy",
         precipChance: 0,
         highTemp: 0,
@@ -92,6 +95,25 @@ class App extends Component {
     }
   };
 
+  getDay = dayNumber => {
+    switch (dayNumber) {
+      case 0:
+        return "Sunday";
+      case 1:
+        return "Monday";
+      case 2:
+        return "Tuesday";
+      case 3:
+        return "Wednesday";
+      case 4:
+        return "Thursday";
+      case 5:
+        return "Friday";
+      case 6:
+        return "Saturday";
+    }
+  };
+
   getCoord = address => {
     return new Promise((resolve, reject) => {
       fetch(
@@ -104,7 +126,6 @@ class App extends Component {
   };
 
   getWeather = (lat, long, unit) => {
-    console.log(`Getting ${unit} data`);
     fetch(
       `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${DARKSKY_API_KEY}/${lat},${long}?units=${unit}`,
       {
@@ -128,18 +149,21 @@ class App extends Component {
               lowTemp: Math.round(daily.data[0].temperatureLow)
             },
             dayOneWeather: {
+              day: this.getDay(new Date(daily.data[1].time * 1000).getDay()),
               icon: daily.data[1].icon,
               precipChance: Math.round(daily.data[1].precipProbability * 100),
               highTemp: Math.round(daily.data[1].temperatureHigh),
               lowTemp: Math.round(daily.data[1].temperatureLow)
             },
             dayTwoWeather: {
+              day: this.getDay(new Date(daily.data[2].time * 1000).getDay()),
               icon: daily.data[2].icon,
               precipChance: Math.round(daily.data[2].precipProbability * 100),
               highTemp: Math.round(daily.data[2].temperatureHigh),
               lowTemp: Math.round(daily.data[2].temperatureLow)
             },
             dayThreeWeather: {
+              day: this.getDay(new Date(daily.data[3].time * 1000).getDay()),
               icon: daily.data[3].icon,
               precipChance: Math.round(daily.data[3].precipProbability * 100),
               highTemp: Math.round(daily.data[3].temperatureHigh),
@@ -166,8 +190,16 @@ class App extends Component {
         location: {
           latitude: data.results[0].location.lat,
           longitude: data.results[0].location.lng,
-          name: `${data.results[0].address_components.city},
-          ${data.results[0].address_components.state}`
+          name: `${
+            data.results[0].address_components.city
+              ? data.results[0].address_components.city + ","
+              : ""
+          }
+          ${
+            data.results[0].address_components.state
+              ? data.results[0].address_components.state
+              : ""
+          }`
         }
       });
     });
@@ -228,14 +260,18 @@ class App extends Component {
           searchSubmit={this.searchSubmit}
           toggleUnit={this.toggleUnit}
         />
-        <main>
-          <MainCard unit={unit} weather={currentWeather} />
-          <div className={styles.sideCardContainer}>
-            <SideCard unit={unit} weather={dayOneWeather} />
-            <SideCard unit={unit} weather={dayTwoWeather} />
-            <SideCard unit={unit} weather={dayThreeWeather} />
-          </div>
-        </main>
+        {location.name ? (
+          <main>
+            <MainCard unit={unit} weather={currentWeather} />
+            <div className={styles.sideCardContainer}>
+              <SideCard unit={unit} weather={dayOneWeather} />
+              <SideCard unit={unit} weather={dayTwoWeather} />
+              <SideCard unit={unit} weather={dayThreeWeather} />
+            </div>
+          </main>
+        ) : (
+          <h1 className={styles.defaultView}>Enter a location</h1>
+        )}
         <Footer />
       </div>
     );
@@ -244,13 +280,6 @@ class App extends Component {
 
 export default App;
 
-//Change state data on unit button check/uncheck (either do conversion or do another request to API)
-
-//Check if location, if not, show a default message instead asking for search or something.
-// state value if location == "" render default no location view
-
 //Add link to footer for Dark Sky and also maybe Github
 
 //Optimize images
-//Make card text dynamic based on brightness? (White text does not work on snow background color)
-//Weather only updates on search button click? But location doesn't need click?
