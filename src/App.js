@@ -91,7 +91,6 @@ class App extends Component {
       });
     } else {
       console.log("Geolocation is not available");
-      // Render a N/A view via setting a state value
     }
   };
 
