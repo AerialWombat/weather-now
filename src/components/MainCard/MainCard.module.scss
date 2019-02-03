@@ -18,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   .currentTemp {
@@ -27,7 +27,7 @@
     justify-content: flex-start;
     align-items: center;
     padding-left: 0.5rem;
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .summary {
@@ -46,6 +46,12 @@
     align-items: center;
     padding-top: 0.5rem;
     border-top: solid 2px #f4e7c3;
+  }
+
+  @media screen and (min-height: 9000px) {
+    .mainIcon {
+      font-size: 3rem;
+    }
   }
 
   @media screen and (min-width: 760px) {
