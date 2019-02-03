@@ -30,14 +30,11 @@
     }
   }
 
-  @media screen and (min-width: 1140px) {
-    height: 30%;
-    margin: .5rem 0;
-
+  @media screen and (min-height: 850px) {
     .summary {
       .icon {
-        height: 2.5rem;
-        font-size: 1.75rem;
+        height: 4.5rem;
+        font-size: 3rem;
       }
 
       p {
