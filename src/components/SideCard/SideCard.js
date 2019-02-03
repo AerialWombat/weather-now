@@ -1,6 +1,7 @@
 import React from "react";
 import WeatherIcon from "react-icons-weather";
 import DataDisplay from "../DataDisplay/DataDisplay.js";
+import { Spring } from "react-spring";
 import classNames from "classnames/bind";
 import styles from "./SideCard.module.scss";
 
@@ -23,30 +24,38 @@ const SideCard = ({ unit, weather }) => {
   });
 
   return (
-    <div className={wrapperClasses}>
-      <div className={styles.summary}>
-        <WeatherIcon name="darksky" iconId={icon} className={styles.icon} />
-        <p>{day}</p>
-      </div>
-      <DataDisplay
-        icon="thermometer"
-        label="High"
-        value={highTemp}
-        unit={unit}
-      />
-      <DataDisplay
-        icon="thermometer-exterior"
-        label="Low"
-        value={lowTemp}
-        unit={unit}
-      />
-      <DataDisplay
-        icon="raindrop"
-        label="Rain"
-        value={precipChance}
-        unit={unit}
-      />
-    </div>
+    <Spring
+      from={{ opacity: 0, marginRight: -300, marginLeft: 300 }}
+      to={{ opacity: 1, marginRight: 0, marginLeft: 0 }}
+      config={{ duration: 500 }}
+    >
+      {props => (
+        <div style={props} className={wrapperClasses}>
+          <div className={styles.summary}>
+            <WeatherIcon name="darksky" iconId={icon} className={styles.icon} />
+            <p>{day}</p>
+          </div>
+          <DataDisplay
+            icon="thermometer"
+            label="High"
+            value={highTemp}
+            unit={unit}
+          />
+          <DataDisplay
+            icon="thermometer-exterior"
+            label="Low"
+            value={lowTemp}
+            unit={unit}
+          />
+          <DataDisplay
+            icon="raindrop"
+            label="Rain"
+            value={precipChance}
+            unit={unit}
+          />
+        </div>
+      )}
+    </Spring>
   );
 };
 
