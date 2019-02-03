@@ -182,29 +182,38 @@ class App extends Component {
   };
 
   searchSubmit = event => {
-    this.getCoord(this.state.searchQuery).then(data => {
-      this.getWeather(
-        data.results[0].location.lat,
-        data.results[0].location.lng,
-        this.state.unit
-      );
-      this.setState({
-        location: {
-          latitude: data.results[0].location.lat,
-          longitude: data.results[0].location.lng,
-          name: `${
-            data.results[0].address_components.city
-              ? data.results[0].address_components.city + ","
-              : ""
-          }
+    this.getCoord(this.state.searchQuery)
+      .then(data => {
+        this.getWeather(
+          data.results[0].location.lat,
+          data.results[0].location.lng,
+          this.state.unit
+        );
+        this.setState({
+          location: {
+            latitude: data.results[0].location.lat,
+            longitude: data.results[0].location.lng,
+            name: `${
+              data.results[0].address_components.city
+                ? data.results[0].address_components.city + ","
+                : ""
+            }
           ${
             data.results[0].address_components.state
               ? data.results[0].address_components.state
               : ""
           }`
-        }
+          }
+        });
+      })
+      .catch(error => {
+        console.log(error);
+        this.setState({
+          location: {
+            name: "Error retrieving data"
+          }
+        });
       });
-    });
     event.preventDefault();
   };
 

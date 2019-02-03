@@ -7,7 +7,7 @@ const SearchBar = ({ searchChange, searchSubmit }) => {
       <input
         className={styles.search}
         type="text"
-        placeholder="Location"
+        placeholder="City, State"
         onChange={searchChange}
       />
       <input className={styles.submit} type="submit" value="Search" />
