@@ -10,7 +10,6 @@
   background: darkcyan;
 
   .summary {
-    height: 100%;
     width: 20%;
     display: flex;
     flex-flow: column;
@@ -21,22 +20,24 @@
     .icon {
       display: flex;
       align-items: center;
-      height: 77.5%;
-      font-size: 2rem;
+      height: 2.5rem;
+      font-size: 1.5rem;
     }
 
     p {
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       font-weight: bold;
     }
   }
 
-  @media screen and (min-width: 760px) {
-    height: 25%;
-    // margin: 0;
+  @media screen and (min-width: 1140px) {
+    height: 30%;
+    margin: .5rem 0;
+
     .summary {
       .icon {
-        font-size: 2.75rem;
+        height: 2.5rem;
+        font-size: 1.75rem;
       }
 
       p {

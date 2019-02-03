@@ -111,6 +111,8 @@ class App extends Component {
         return "Friday";
       case 6:
         return "Saturday";
+      default:
+        break;
     }
   };
 
@@ -280,5 +282,4 @@ class App extends Component {
 
 export default App;
 
-//Add link to footer for Dark Sky and also maybe Github
 //Optimize images

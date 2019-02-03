@@ -73,7 +73,7 @@ textarea:focus {
       "sideCards";
 
     .sideCardContainer {
-      padding: 0.5rem;
+      padding: 0.25rem;
     }
   }
 
@@ -98,7 +98,7 @@ textarea:focus {
       grid-template-areas: "mainCard sideCards";
 
       .sideCardContainer {
-        height: 70%;
+        height: 90%;
         display: flex;
         flex-flow: column;
         justify-content: space-between;
@@ -108,36 +108,36 @@ textarea:focus {
 }
 
 .sunny {
-  background: url("./sunny.jpg") #333;
+  background: url("./assets/Images/sunny.jpg") #333;
   background-size: cover;
 }
 
 .night {
-  background: url("./night.jpg") #333;
+  background: url("./assets/Images/night.jpg") #333;
   background-size: cover;
 }
 
 .rain {
-  background: url("./rainy.jpg") #333;
+  background: url("./assets/Images/rainy.jpg") #333;
   background-size: cover;
 }
 
 .winter {
-  background: url("./snow.jpg") #333;
+  background: url("./assets/Images/snow.jpg") #333;
   background-size: cover;
 }
 
 .windy {
-  background: url("./wind.jpg") #333;
+  background: url("./assets/Images/wind.jpg") #333;
   background-size: cover;
 }
 
 .fog {
-  background: url("./fog.jpg") #333;
+  background: url("./assets/Images/fog.jpg") #333;
   background-size: cover;
 }
 
 .cloudy {
-  background: url("./cloud.jpg") #333;
+  background: url("./assets/Images/cloud.jpg") #333;
   background-size: cover;
 }
