@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "5828dd5354d5014e43d024b9c6ca9773",
-    "url": "/weather-now/static/media/snow.5828dd53.jpg"
+    "revision": "ea591eb2a211915d33c4a996f0830ba5",
+    "url": "/weather-now/static/media/fog.ea591eb2.jpg"
   },
   {
-    "revision": "260a7ec04de4801217b7",
-    "url": "/weather-now/static/css/main.9a0b802c.chunk.css"
+    "revision": "8ef3b892e7ed97d2c0ee",
+    "url": "/weather-now/static/css/main.0fb8c5f1.chunk.css"
   },
   {
     "revision": "6a802cb1a8f1cd72f9bfbafd183d0951",
@@ -24,6 +24,10 @@ self.__precacheManifest = [
     "url": "/weather-now/static/media/night.45d431bf.jpg"
   },
   {
+    "revision": "5828dd5354d5014e43d024b9c6ca9773",
+    "url": "/weather-now/static/media/snow.5828dd53.jpg"
+  },
+  {
     "revision": "e415cc87f33ce09975af4ee31c3a9856",
     "url": "/weather-now/static/media/sunny.e415cc87.jpg"
   },
@@ -32,12 +36,8 @@ self.__precacheManifest = [
     "url": "/weather-now/static/media/wind.2688ea8f.jpg"
   },
   {
-    "revision": "ea591eb2a211915d33c4a996f0830ba5",
-    "url": "/weather-now/static/media/fog.ea591eb2.jpg"
-  },
-  {
-    "revision": "260a7ec04de4801217b7",
-    "url": "/weather-now/static/js/main.260a7ec0.chunk.js"
+    "revision": "8ef3b892e7ed97d2c0ee",
+    "url": "/weather-now/static/js/main.8ef3b892.chunk.js"
   },
   {
     "revision": "e10f33236386e6979068391f9a7a0886",
@@ -52,6 +52,10 @@ self.__precacheManifest = [
     "url": "/weather-now/static/media/weathericons-regular-webfont.4b658767.eot"
   },
   {
+    "revision": "1cd48d78f06d33973d9d761d426e69bf",
+    "url": "/weather-now/static/media/weathericons-regular-webfont.1cd48d78.woff2"
+  },
+  {
     "revision": "8cac70ebda3f23ce472110d9f21e8593",
     "url": "/weather-now/static/media/weathericons-regular-webfont.8cac70eb.woff"
   },
@@ -64,15 +68,11 @@ self.__precacheManifest = [
     "url": "/weather-now/static/media/weathericons-regular-webfont.ecaf8b48.svg"
   },
   {
-    "revision": "1cd48d78f06d33973d9d761d426e69bf",
-    "url": "/weather-now/static/media/weathericons-regular-webfont.1cd48d78.woff2"
-  },
-  {
     "revision": "aab2a87e10e89ab8fd28",
     "url": "/weather-now/static/css/1.ef6b3e4c.chunk.css"
   },
   {
-    "revision": "1fabd89f722e72eed3955b3ff10e77e8",
+    "revision": "b238832237af85573f984764b7a8e08f",
     "url": "/weather-now/index.html"
   }
 ];
