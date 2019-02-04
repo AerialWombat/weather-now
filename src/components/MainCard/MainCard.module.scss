@@ -4,7 +4,7 @@
   padding: 0.25rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 1fr 35%;
+  grid-template-rows: 1fr 1fr 45%;
   grid-template-areas:
     "icon currentTemp currentTemp currentTemp"
     "icon summary summary summary"
@@ -18,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .currentTemp {
@@ -27,7 +27,7 @@
     justify-content: flex-start;
     align-items: center;
     padding-left: 0.5rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .summary {
@@ -48,9 +48,13 @@
     border-top: solid 2px #f4e7c3;
   }
 
-  @media screen and (min-height: 9000px) {
+  @media screen and (min-height: 900px) {
     .mainIcon {
-      font-size: 3rem;
+      font-size: 4rem;
+    }
+
+    .currentTemp {
+      font-size: 2rem;
     }
   }
 
@@ -74,7 +78,11 @@
     }
 
     .currentTemp {
-      font-size: 2.5rem;
+      font-size: 3rem;
+    }
+
+    .summary {
+      font-size: 2rem;
     }
   }
 }
