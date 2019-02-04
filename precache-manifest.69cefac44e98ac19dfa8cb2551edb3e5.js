@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "ea591eb2a211915d33c4a996f0830ba5",
-    "url": "/weather-now/static/media/fog.ea591eb2.jpg"
+    "revision": "e10f33236386e6979068391f9a7a0886",
+    "url": "/weather-now/static/media/cloud.e10f3323.jpg"
   },
   {
-    "revision": "95526ce3f853f82d5a5a",
+    "revision": "201cfc155cc5dc281ce7",
     "url": "/weather-now/static/css/main.310d3247.chunk.css"
   },
   {
@@ -28,32 +28,32 @@ self.__precacheManifest = [
     "url": "/weather-now/static/media/snow.5828dd53.jpg"
   },
   {
+    "revision": "e415cc87f33ce09975af4ee31c3a9856",
+    "url": "/weather-now/static/media/sunny.e415cc87.jpg"
+  },
+  {
     "revision": "85a3b63359772320208a1f1ed8cf01c1",
     "url": "/weather-now/static/media/rainy.85a3b633.jpg"
+  },
+  {
+    "revision": "201cfc155cc5dc281ce7",
+    "url": "/weather-now/static/js/main.201cfc15.chunk.js"
   },
   {
     "revision": "2688ea8f255876fdf9ed823b9e04e1da",
     "url": "/weather-now/static/media/wind.2688ea8f.jpg"
   },
   {
-    "revision": "95526ce3f853f82d5a5a",
-    "url": "/weather-now/static/js/main.95526ce3.chunk.js"
-  },
-  {
-    "revision": "e415cc87f33ce09975af4ee31c3a9856",
-    "url": "/weather-now/static/media/sunny.e415cc87.jpg"
-  },
-  {
-    "revision": "e10f33236386e6979068391f9a7a0886",
-    "url": "/weather-now/static/media/cloud.e10f3323.jpg"
-  },
-  {
-    "revision": "4b658767da6bd92ce2addb3ce512784d",
-    "url": "/weather-now/static/media/weathericons-regular-webfont.4b658767.eot"
+    "revision": "ea591eb2a211915d33c4a996f0830ba5",
+    "url": "/weather-now/static/media/fog.ea591eb2.jpg"
   },
   {
     "revision": "1cd48d78f06d33973d9d761d426e69bf",
     "url": "/weather-now/static/media/weathericons-regular-webfont.1cd48d78.woff2"
+  },
+  {
+    "revision": "4b658767da6bd92ce2addb3ce512784d",
+    "url": "/weather-now/static/media/weathericons-regular-webfont.4b658767.eot"
   },
   {
     "revision": "8cac70ebda3f23ce472110d9f21e8593",
@@ -72,7 +72,7 @@ self.__precacheManifest = [
     "url": "/weather-now/static/css/1.ef6b3e4c.chunk.css"
   },
   {
-    "revision": "cc30acd1483c15eed88e7bcb44435a60",
+    "revision": "cc28cde4401527dacd54f7c7e145ba99",
     "url": "/weather-now/index.html"
   }
 ];
