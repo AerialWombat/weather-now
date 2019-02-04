@@ -8,11 +8,11 @@
   "runtime~main.js": "/weather-now/static/js/runtime~main.d8c546a8.js",
   "runtime~main.js.map": "/weather-now/static/js/runtime~main.d8c546a8.js.map",
   "static/media/App.module.scss": "/weather-now/static/media/snow.5828dd53.jpg",
-  "static/media/weather-icons.css": "/weather-now/static/media/weathericons-regular-webfont.ecaf8b48.svg",
+  "static/media/weather-icons.css": "/weather-now/static/media/weathericons-regular-webfont.8cac70eb.woff",
   "static/media/darksky.png": "/weather-now/static/media/darksky.6a802cb1.png",
-  "static/css/main.310d3247.chunk.css.map": "/weather-now/static/css/main.310d3247.chunk.css.map",
   "static/css/1.ef6b3e4c.chunk.css.map": "/weather-now/static/css/1.ef6b3e4c.chunk.css.map",
+  "static/css/main.310d3247.chunk.css.map": "/weather-now/static/css/main.310d3247.chunk.css.map",
   "index.html": "/weather-now/index.html",
-  "precache-manifest.69cefac44e98ac19dfa8cb2551edb3e5.js": "/weather-now/precache-manifest.69cefac44e98ac19dfa8cb2551edb3e5.js",
+  "precache-manifest.3d24dfac516294c655a04df1dd635f89.js": "/weather-now/precache-manifest.3d24dfac516294c655a04df1dd635f89.js",
   "service-worker.js": "/weather-now/service-worker.js"
 }

@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "e10f33236386e6979068391f9a7a0886",
-    "url": "/weather-now/static/media/cloud.e10f3323.jpg"
+    "revision": "e415cc87f33ce09975af4ee31c3a9856",
+    "url": "/weather-now/static/media/sunny.e415cc87.jpg"
   },
   {
     "revision": "201cfc155cc5dc281ce7",
@@ -28,36 +28,32 @@ self.__precacheManifest = [
     "url": "/weather-now/static/media/snow.5828dd53.jpg"
   },
   {
-    "revision": "e415cc87f33ce09975af4ee31c3a9856",
-    "url": "/weather-now/static/media/sunny.e415cc87.jpg"
-  },
-  {
     "revision": "85a3b63359772320208a1f1ed8cf01c1",
     "url": "/weather-now/static/media/rainy.85a3b633.jpg"
-  },
-  {
-    "revision": "201cfc155cc5dc281ce7",
-    "url": "/weather-now/static/js/main.201cfc15.chunk.js"
   },
   {
     "revision": "2688ea8f255876fdf9ed823b9e04e1da",
     "url": "/weather-now/static/media/wind.2688ea8f.jpg"
   },
   {
-    "revision": "ea591eb2a211915d33c4a996f0830ba5",
-    "url": "/weather-now/static/media/fog.ea591eb2.jpg"
+    "revision": "201cfc155cc5dc281ce7",
+    "url": "/weather-now/static/js/main.201cfc15.chunk.js"
   },
   {
-    "revision": "1cd48d78f06d33973d9d761d426e69bf",
-    "url": "/weather-now/static/media/weathericons-regular-webfont.1cd48d78.woff2"
+    "revision": "e10f33236386e6979068391f9a7a0886",
+    "url": "/weather-now/static/media/cloud.e10f3323.jpg"
+  },
+  {
+    "revision": "ea591eb2a211915d33c4a996f0830ba5",
+    "url": "/weather-now/static/media/fog.ea591eb2.jpg"
   },
   {
     "revision": "4b658767da6bd92ce2addb3ce512784d",
     "url": "/weather-now/static/media/weathericons-regular-webfont.4b658767.eot"
   },
   {
-    "revision": "8cac70ebda3f23ce472110d9f21e8593",
-    "url": "/weather-now/static/media/weathericons-regular-webfont.8cac70eb.woff"
+    "revision": "1cd48d78f06d33973d9d761d426e69bf",
+    "url": "/weather-now/static/media/weathericons-regular-webfont.1cd48d78.woff2"
   },
   {
     "revision": "4618f0de2a818e7ad3fe880e0b74d04a",
@@ -66,6 +62,10 @@ self.__precacheManifest = [
   {
     "revision": "ecaf8b481729b18f6a8494d9f691cdae",
     "url": "/weather-now/static/media/weathericons-regular-webfont.ecaf8b48.svg"
+  },
+  {
+    "revision": "8cac70ebda3f23ce472110d9f21e8593",
+    "url": "/weather-now/static/media/weathericons-regular-webfont.8cac70eb.woff"
   },
   {
     "revision": "aab2a87e10e89ab8fd28",
