@@ -128,7 +128,7 @@ class App extends Component {
 
   getWeather = (lat, long, unit) => {
     fetch(
-      `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${DARKSKY_API_KEY}/${lat},${long}?units=${unit}`,
+      `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${DARKSKY_API_KEY}/${lat},${long}?units=${unit}&exclude=minutely,hourly,alerts,flags`,
       {
         method: "GET",
         headers: {
