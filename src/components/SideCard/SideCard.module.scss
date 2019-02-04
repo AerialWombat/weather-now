@@ -1,5 +1,5 @@
 .wrapper {
-  height: 27.5%;
+  height: 25%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
@@ -44,6 +44,8 @@
   }
 
   @media screen and (min-height: 900px) {
+    height: 27.5%;
+
     .summary {
       .icon {
         height: 4.5rem;
