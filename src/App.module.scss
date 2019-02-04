@@ -31,8 +31,9 @@ textarea:focus {
 ======================================*/
 
 .App {
-  min-height: 100vh;
-  min-width: 100vw;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 20vh 1fr 7.5vh;

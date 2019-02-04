@@ -54,7 +54,13 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    console.log("App component mounted");
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty(`--vh`, `${vh}px`);
+    window.addEventListener("resize", () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    });
+
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(position => {
         this.setState({
