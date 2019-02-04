@@ -16,6 +16,7 @@ const MainCard = ({ unit, weather }) => {
     lowTemp
   } = weather;
 
+  // Set classes for background image based on icon
   let cx = classNames.bind(styles);
   let wrapperClasses = cx({
     wrapper: true,
