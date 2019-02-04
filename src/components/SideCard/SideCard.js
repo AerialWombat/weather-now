@@ -8,6 +8,7 @@ import styles from "./SideCard.module.scss";
 const SideCard = ({ unit, weather }) => {
   const { day, icon, precipChance, highTemp, lowTemp } = weather;
 
+  // Set classes for background image based on icon
   let cx = classNames.bind(styles);
   let wrapperClasses = cx({
     wrapper: true,
@@ -60,6 +61,3 @@ const SideCard = ({ unit, weather }) => {
 };
 
 export default SideCard;
-
-//change color based on icon
-//conditional rendering with given unit type
