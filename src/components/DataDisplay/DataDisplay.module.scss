@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     height: 2.5rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   span {
@@ -18,9 +18,23 @@
     }
 
     p {
+      font-size: 0.75rem;
       font-weight: bold;
     }
   }
+
+  @media screen and (min-height: 720px) {
+    .icon {
+      height: 3rem;
+      font-size: 2rem;
+    }
+    span {
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
   @media screen and (min-height: 900px) {
     .icon {
       height: 4.5rem;
