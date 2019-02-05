@@ -48,9 +48,15 @@
     border-top: solid 2px hsla(0, 100%, 100%, 0.8);
   }
 
+  @media screen and (min-height: 720px) {
+    .mainIcon {
+      font-size: 3.5rem;
+    }
+  }
+
   @media screen and (min-height: 900px) {
     .mainIcon {
-      font-size: 4rem;
+      font-size: 5rem;
     }
 
     .currentTemp {
