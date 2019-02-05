@@ -72,9 +72,9 @@ class App extends Component {
 
         // Fetching a city name via reverse geocoding
         fetch(
-          `https://cors-anywhere.herokuapp.com/https://api.geocod.io/v1.3/reverse?q=${
-            position.coords.latitude
-          },${position.coords.longitude}&api_key=${GEO_API_KEY}`
+          `https://api.geocod.io/v1.3/reverse?q=${position.coords.latitude},${
+            position.coords.longitude
+          }&api_key=${GEO_API_KEY}`
         ).then(res =>
           res.json().then(data => {
             this.setState({
