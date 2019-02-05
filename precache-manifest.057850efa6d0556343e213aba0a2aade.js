@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/weather-now/static/media/cloud.e10f3323.jpg"
   },
   {
-    "revision": "bbd4edc5211fce6d6f80",
-    "url": "/weather-now/static/css/main.f7794312.chunk.css"
+    "revision": "850a634a2b9c8dfb5278",
+    "url": "/weather-now/static/css/main.8d546e41.chunk.css"
   },
   {
     "revision": "6a802cb1a8f1cd72f9bfbafd183d0951",
@@ -20,32 +20,32 @@ self.__precacheManifest = [
     "url": "/weather-now/static/js/runtime~main.d8c546a8.js"
   },
   {
-    "revision": "e415cc87f33ce09975af4ee31c3a9856",
-    "url": "/weather-now/static/media/sunny.e415cc87.jpg"
-  },
-  {
     "revision": "45d431bf3b92976538d8c04d2a8da919",
     "url": "/weather-now/static/media/night.45d431bf.jpg"
+  },
+  {
+    "revision": "e415cc87f33ce09975af4ee31c3a9856",
+    "url": "/weather-now/static/media/sunny.e415cc87.jpg"
   },
   {
     "revision": "5828dd5354d5014e43d024b9c6ca9773",
     "url": "/weather-now/static/media/snow.5828dd53.jpg"
   },
   {
+    "revision": "2688ea8f255876fdf9ed823b9e04e1da",
+    "url": "/weather-now/static/media/wind.2688ea8f.jpg"
+  },
+  {
+    "revision": "850a634a2b9c8dfb5278",
+    "url": "/weather-now/static/js/main.850a634a.chunk.js"
+  },
+  {
     "revision": "ea591eb2a211915d33c4a996f0830ba5",
     "url": "/weather-now/static/media/fog.ea591eb2.jpg"
   },
   {
-    "revision": "bbd4edc5211fce6d6f80",
-    "url": "/weather-now/static/js/main.bbd4edc5.chunk.js"
-  },
-  {
     "revision": "85a3b63359772320208a1f1ed8cf01c1",
     "url": "/weather-now/static/media/rainy.85a3b633.jpg"
-  },
-  {
-    "revision": "2688ea8f255876fdf9ed823b9e04e1da",
-    "url": "/weather-now/static/media/wind.2688ea8f.jpg"
   },
   {
     "revision": "1cd48d78f06d33973d9d761d426e69bf",
@@ -72,7 +72,7 @@ self.__precacheManifest = [
     "url": "/weather-now/static/css/1.ef6b3e4c.chunk.css"
   },
   {
-    "revision": "d3283b60ac4d3f6936373613a4537a99",
+    "revision": "3c1c27d7f12ae35cf2176b213adfb6f1",
     "url": "/weather-now/index.html"
   }
 ];
