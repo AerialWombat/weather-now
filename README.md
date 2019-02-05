@@ -2,10 +2,10 @@
 
 A mobile-first weather display application built using ReactJS using the [Dark Sky API](https://darksky.net/poweredby/) and [geocodio API](https://www.geocod.io/).
 
-### How To Use
+## How To Use
 
-- The application can display weather for your current location if the user allows access to their location upon loading
-- Alternatively, you can type the desired location in the search bar
+- The application can display weather for the current location if access to location is allowed
+- Alternatively, location can be searched using the search bar
 - The button below the search bar can be used to toggle between **Imperial units** and **SI units** (With the default being SI units)
 
 ### Built With
