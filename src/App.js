@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Header from "./components/Header/Header";
 import MainCard from "./components/MainCard/MainCard";
 import SideCard from "./components/SideCard/SideCard";
@@ -13,6 +13,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      isFetching: false,
       unit: "si",
       searchQuery: "",
       location: {
@@ -180,6 +181,7 @@ class App extends Component {
   };
 
   searchSubmit = event => {
+    this.setState({ isFetching: true });
     this.getCoord(this.state.searchQuery)
       .then(data => {
         this.getWeather(
@@ -188,6 +190,7 @@ class App extends Component {
           this.state.unit
         );
         this.setState({
+          isFetching: false,
           location: {
             latitude: data.results[0].location.lat,
             longitude: data.results[0].location.lng,
@@ -207,6 +210,7 @@ class App extends Component {
       .catch(error => {
         console.log(error);
         this.setState({
+          isFetching: false,
           location: {
             name: "Error retrieving data"
           }
@@ -232,6 +236,7 @@ class App extends Component {
 
   render() {
     const {
+      isFetching,
       unit,
       location,
       currentWeather,
@@ -259,6 +264,39 @@ class App extends Component {
       });
     }
 
+    let content;
+
+    if (location.name) {
+      content = (
+        <main className={styles.cardGrid}>
+          <MainCard unit={unit} weather={currentWeather} />
+          <div className={styles.sideCardContainer}>
+            <SideCard unit={unit} weather={dayOneWeather} />
+            <SideCard unit={unit} weather={dayTwoWeather} />
+            <SideCard unit={unit} weather={dayThreeWeather} />
+          </div>
+        </main>
+      );
+    } else if (!location.name) {
+      content = (
+        <main className={styles.defaultView}>
+          <h1>Enter a location</h1>
+        </main>
+      );
+    }
+
+    if (isFetching) {
+      content = (
+        <main className={styles.defaultView}>
+          <img
+            src={require("./assets/spinner.gif")}
+            alt=""
+            className={styles.spinner}
+          />
+        </main>
+      );
+    }
+
     return (
       <div className={styles.App}>
         <div className={bgClasses} />
@@ -269,18 +307,8 @@ class App extends Component {
           searchSubmit={this.searchSubmit}
           toggleUnit={this.toggleUnit}
         />
-        {location.name ? (
-          <main>
-            <MainCard unit={unit} weather={currentWeather} />
-            <div className={styles.sideCardContainer}>
-              <SideCard unit={unit} weather={dayOneWeather} />
-              <SideCard unit={unit} weather={dayTwoWeather} />
-              <SideCard unit={unit} weather={dayThreeWeather} />
-            </div>
-          </main>
-        ) : (
-          <h1 className={styles.defaultView}>Enter a location</h1>
-        )}
+        {content}
+
         <Footer />
       </div>
     );
