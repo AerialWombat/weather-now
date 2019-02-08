@@ -17,39 +17,39 @@ class App extends Component {
       unit: "si",
       searchQuery: "",
       location: {
-        latitude: 0,
-        longitude: 0,
+        latitude: null,
+        longitude: null,
         name: ""
       },
       currentWeather: {
-        summary: "",
+        summary: null,
         icon: "clear-day",
-        windSpeed: 0,
-        precipChance: 0,
-        currentTemp: 0,
-        highTemp: 0,
-        lowTemp: 0
+        windSpeed: null,
+        precipChance: null,
+        currentTemp: null,
+        highTemp: null,
+        lowTemp: null
       },
       dayOneWeather: {
-        day: "",
-        icon: "cloudy",
-        precipChance: 0,
-        highTemp: 0,
-        lowTemp: 0
+        day: null,
+        icon: null,
+        precipChance: null,
+        highTemp: null,
+        lowTemp: null
       },
       dayTwoWeather: {
-        day: "",
-        icon: "cloudy",
-        precipChance: 0,
-        highTemp: 0,
-        lowTemp: 0
+        day: null,
+        icon: null,
+        precipChance: null,
+        highTemp: null,
+        lowTemp: null
       },
       dayThreeWeather: {
-        day: "",
-        icon: "cloudy",
-        precipChance: 0,
-        highTemp: 0,
-        lowTemp: 0
+        day: null,
+        icon: null,
+        precipChance: null,
+        highTemp: null,
+        lowTemp: null
       }
     };
   }
