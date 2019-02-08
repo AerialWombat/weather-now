@@ -31,25 +31,25 @@ class App extends Component {
         lowTemp: null
       },
       dayOneWeather: {
-        day: "",
+        day: null,
         icon: "cloudy",
-        precipChance: 0,
-        highTemp: 0,
-        lowTemp: 0
+        precipChance: null,
+        highTemp: null,
+        lowTemp: null
       },
       dayTwoWeather: {
-        day: "",
+        day: null,
         icon: "cloudy",
-        precipChance: 0,
-        highTemp: 0,
-        lowTemp: 0
+        precipChance: null,
+        highTemp: null,
+        lowTemp: null
       },
       dayThreeWeather: {
-        day: "",
+        day: null,
         icon: "cloudy",
-        precipChance: 0,
-        highTemp: 0,
-        lowTemp: 0
+        precipChance: null,
+        highTemp: null,
+        lowTemp: null
       }
     };
   }
