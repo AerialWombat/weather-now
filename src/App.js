@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+import styles from "./App.module.scss";
+import classNames from "classnames/bind";
 import Header from "./components/Header/Header";
 import MainCard from "./components/MainCard/MainCard";
 import SideCard from "./components/SideCard/SideCard";
 import Footer from "./components/Footer/Footer";
-import styles from "./App.module.scss";
-import classNames from "classnames/bind";
 
 const DARKSKY_API_KEY = "2606ebfb674e627733ad90d0f6c1745d";
 const GEO_API_KEY = "c15d0a0445d54d403bca5a6afd55191db33bc3d";

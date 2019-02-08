@@ -1,9 +1,9 @@
 import React from "react";
-import WeatherIcon from "react-icons-weather";
-import DataDisplay from "../DataDisplay/DataDisplay.js";
-import { Spring } from "react-spring";
-import classNames from "classnames/bind";
 import styles from "./MainCard.module.scss";
+import classNames from "classnames/bind";
+import DataDisplay from "../DataDisplay/DataDisplay.js";
+import WeatherIcon from "react-icons-weather";
+import { Spring } from "react-spring";
 
 const MainCard = ({ unit, weather }) => {
   const {
