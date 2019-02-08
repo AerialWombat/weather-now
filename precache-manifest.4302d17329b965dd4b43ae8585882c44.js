@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "44834afc25f577ff67e2569f24bacab5",
-    "url": "/weather-now/static/media/fog.44834afc.jpg"
+    "revision": "8761d8ada2f0ba3c1c7f3f91b257ab75",
+    "url": "/weather-now/static/media/cloud.8761d8ad.jpg"
   },
   {
     "revision": "5c50a042cac050d2ca0c",
@@ -24,28 +24,32 @@ self.__precacheManifest = [
     "url": "/weather-now/static/media/night.d68c2cd4.jpg"
   },
   {
-    "revision": "7c2f975dcbda3caac99ea20851baeaff",
-    "url": "/weather-now/static/media/wind.7c2f975d.jpg"
-  },
-  {
-    "revision": "40c8a772bb2f9cb5096a4725ed3556d5",
-    "url": "/weather-now/static/media/sunny.40c8a772.jpg"
-  },
-  {
     "revision": "e5277e52c50fd53e27ad2d76a6fb0f9e",
     "url": "/weather-now/static/media/snow.e5277e52.jpg"
   },
   {
-    "revision": "8761d8ada2f0ba3c1c7f3f91b257ab75",
-    "url": "/weather-now/static/media/cloud.8761d8ad.jpg"
+    "revision": "7c2f975dcbda3caac99ea20851baeaff",
+    "url": "/weather-now/static/media/wind.7c2f975d.jpg"
+  },
+  {
+    "revision": "44834afc25f577ff67e2569f24bacab5",
+    "url": "/weather-now/static/media/fog.44834afc.jpg"
+  },
+  {
+    "revision": "f386a669b5a43d0dade45547c0b1e571",
+    "url": "/weather-now/static/media/rainy.f386a669.jpg"
   },
   {
     "revision": "5c50a042cac050d2ca0c",
     "url": "/weather-now/static/js/main.5c50a042.chunk.js"
   },
   {
-    "revision": "f386a669b5a43d0dade45547c0b1e571",
-    "url": "/weather-now/static/media/rainy.f386a669.jpg"
+    "revision": "40c8a772bb2f9cb5096a4725ed3556d5",
+    "url": "/weather-now/static/media/sunny.40c8a772.jpg"
+  },
+  {
+    "revision": "4b658767da6bd92ce2addb3ce512784d",
+    "url": "/weather-now/static/media/weathericons-regular-webfont.4b658767.eot"
   },
   {
     "revision": "1cd48d78f06d33973d9d761d426e69bf",
@@ -54,10 +58,6 @@ self.__precacheManifest = [
   {
     "revision": "8cac70ebda3f23ce472110d9f21e8593",
     "url": "/weather-now/static/media/weathericons-regular-webfont.8cac70eb.woff"
-  },
-  {
-    "revision": "4b658767da6bd92ce2addb3ce512784d",
-    "url": "/weather-now/static/media/weathericons-regular-webfont.4b658767.eot"
   },
   {
     "revision": "4618f0de2a818e7ad3fe880e0b74d04a",
