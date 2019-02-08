@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Header from "./components/Header/Header";
 import MainCard from "./components/MainCard/MainCard";
 import SideCard from "./components/SideCard/SideCard";
@@ -291,11 +291,13 @@ class App extends Component {
 
     if (isFetching) {
       content = (
-        <main className={styles.defaultView}>
-          <img
-            src={require("./assets/spinner.gif")}
-            alt=""
+        <main width="320" height="320" className={styles.defaultView}>
+          <video
             className={styles.spinner}
+            src={require("./assets/spinner.webm")}
+            type="video/webm"
+            autoPlay
+            loop
           />
         </main>
       );
