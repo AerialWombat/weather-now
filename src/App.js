@@ -214,7 +214,6 @@ class App extends Component {
         });
       })
       .catch(error => {
-        console.log(error);
         this.setState({
           isFetching: false,
           location: {
@@ -288,31 +287,31 @@ class App extends Component {
     return content;
   };
 
+  getBackground = icon => {
+    const cx = classNames.bind(styles);
+    const bgClasses = cx({
+      "bg-image": true,
+      sunny: icon === "clear-day",
+      night: icon === "clear-night",
+      rain: icon === "rain",
+      winter: icon === "snow" || icon === "sleet",
+      windy: icon === "wind",
+      fog: icon === "fog",
+      cloudy:
+        icon === "cloudy" ||
+        icon === "partly-cloudy-day" ||
+        icon === "partly-cloudy-night"
+    });
+
+    return bgClasses;
+  };
+
   render() {
     const { unit, location, currentWeather } = this.state;
 
-    // Set classes for background image based on icon
-    {
-      let cx = classNames.bind(styles);
-      var bgClasses = cx({
-        "bg-image": true,
-        sunny: currentWeather.icon === "clear-day",
-        night: currentWeather.icon === "clear-night",
-        rain: currentWeather.icon === "rain",
-        winter:
-          currentWeather.icon === "snow" || currentWeather.icon === "sleet",
-        windy: currentWeather.icon === "wind",
-        fog: currentWeather.icon === "fog",
-        cloudy:
-          currentWeather.icon === "cloudy" ||
-          currentWeather.icon === "partly-cloudy-day" ||
-          currentWeather.icon === "partly-cloudy-night"
-      });
-    }
-
     return (
       <div className={styles.App}>
-        <div className={bgClasses} />
+        <div className={this.getBackground(currentWeather.icon)} />
         <Header
           location={location}
           unit={unit}
