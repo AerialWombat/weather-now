@@ -6,8 +6,8 @@ import MainCard from "./components/MainCard/MainCard";
 import SideCard from "./components/SideCard/SideCard";
 import Footer from "./components/Footer/Footer";
 
-const DARKSKY_API_KEY = "**REMOVED**";
-const GEO_API_KEY = "**REMOVED**";
+const DARKSKY_API_KEY = `${process.env.REACT_APP_DARKSKY_API_KEY}`;
+const GEO_API_KEY = `${process.env.REACT_APP_GEO_API_KEY}`;
 
 class App extends Component {
   constructor() {
