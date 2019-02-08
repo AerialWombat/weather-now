@@ -8,7 +8,11 @@ const Header = ({ location, unit, searchChange, searchSubmit, toggleUnit }) => {
       <h1 className={styles.title}>Weather Now</h1>
       <h3 className={styles.subtitle}>{location.name}</h3>
       <SearchBar searchChange={searchChange} searchSubmit={searchSubmit} />
-      <button className={styles.toggle} onClick={toggleUnit}>
+      <button
+        aria-label="Toggle unit type"
+        className={styles.toggle}
+        onClick={toggleUnit}
+      >
         {unit === "si" ? "US" : "SI"}
       </button>
     </header>
