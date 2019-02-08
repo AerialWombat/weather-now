@@ -1,6 +1,6 @@
 # weatherNow
 
-A mobile-first weather display application built using ReactJS using the [Dark Sky API](https://darksky.net/poweredby/) and [geocodio API](https://www.geocod.io/).
+A responsive weather display application built using ReactJS using the [Dark Sky API](https://darksky.net/poweredby/) and [geocodio API](https://www.geocod.io/).
 
 ## How To Use
 
