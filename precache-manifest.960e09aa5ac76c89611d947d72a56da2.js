@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "8761d8ada2f0ba3c1c7f3f91b257ab75",
-    "url": "/weather-now/static/media/cloud.8761d8ad.jpg"
+    "revision": "7c2f975dcbda3caac99ea20851baeaff",
+    "url": "/weather-now/static/media/wind.7c2f975d.jpg"
   },
   {
-    "revision": "05c5176e075c255862eb",
+    "revision": "da9ce883f082e4f9a134",
     "url": "/weather-now/static/css/main.9b0c4b43.chunk.css"
   },
   {
@@ -20,28 +20,28 @@ self.__precacheManifest = [
     "url": "/weather-now/static/js/runtime~main.d8c546a8.js"
   },
   {
-    "revision": "e5277e52c50fd53e27ad2d76a6fb0f9e",
-    "url": "/weather-now/static/media/snow.e5277e52.jpg"
-  },
-  {
     "revision": "d68c2cd4058b2af93b0693853d39b5cf",
     "url": "/weather-now/static/media/night.d68c2cd4.jpg"
   },
   {
-    "revision": "7c2f975dcbda3caac99ea20851baeaff",
-    "url": "/weather-now/static/media/wind.7c2f975d.jpg"
-  },
-  {
-    "revision": "44834afc25f577ff67e2569f24bacab5",
-    "url": "/weather-now/static/media/fog.44834afc.jpg"
+    "revision": "e5277e52c50fd53e27ad2d76a6fb0f9e",
+    "url": "/weather-now/static/media/snow.e5277e52.jpg"
   },
   {
     "revision": "f386a669b5a43d0dade45547c0b1e571",
     "url": "/weather-now/static/media/rainy.f386a669.jpg"
   },
   {
-    "revision": "05c5176e075c255862eb",
-    "url": "/weather-now/static/js/main.05c5176e.chunk.js"
+    "revision": "44834afc25f577ff67e2569f24bacab5",
+    "url": "/weather-now/static/media/fog.44834afc.jpg"
+  },
+  {
+    "revision": "8761d8ada2f0ba3c1c7f3f91b257ab75",
+    "url": "/weather-now/static/media/cloud.8761d8ad.jpg"
+  },
+  {
+    "revision": "da9ce883f082e4f9a134",
+    "url": "/weather-now/static/js/main.da9ce883.chunk.js"
   },
   {
     "revision": "40c8a772bb2f9cb5096a4725ed3556d5",
@@ -56,12 +56,12 @@ self.__precacheManifest = [
     "url": "/weather-now/static/media/weathericons-regular-webfont.4b658767.eot"
   },
   {
-    "revision": "4618f0de2a818e7ad3fe880e0b74d04a",
-    "url": "/weather-now/static/media/weathericons-regular-webfont.4618f0de.ttf"
-  },
-  {
     "revision": "8cac70ebda3f23ce472110d9f21e8593",
     "url": "/weather-now/static/media/weathericons-regular-webfont.8cac70eb.woff"
+  },
+  {
+    "revision": "4618f0de2a818e7ad3fe880e0b74d04a",
+    "url": "/weather-now/static/media/weathericons-regular-webfont.4618f0de.ttf"
   },
   {
     "revision": "ecaf8b481729b18f6a8494d9f691cdae",
@@ -76,7 +76,7 @@ self.__precacheManifest = [
     "url": "/weather-now/static/css/1.c2fe723b.chunk.css"
   },
   {
-    "revision": "12c6362c47ec35dd9409c1f6ff0ca183",
+    "revision": "063dbd382b7f9b63add8013ed03c65b9",
     "url": "/weather-now/index.html"
   }
 ];

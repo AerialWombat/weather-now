@@ -1,19 +1,19 @@
 {
   "main.css": "/weather-now/static/css/main.9b0c4b43.chunk.css",
-  "main.js": "/weather-now/static/js/main.05c5176e.chunk.js",
-  "main.js.map": "/weather-now/static/js/main.05c5176e.chunk.js.map",
+  "main.js": "/weather-now/static/js/main.da9ce883.chunk.js",
+  "main.js.map": "/weather-now/static/js/main.da9ce883.chunk.js.map",
   "static/css/1.c2fe723b.chunk.css": "/weather-now/static/css/1.c2fe723b.chunk.css",
   "static/js/1.38175a46.chunk.js": "/weather-now/static/js/1.38175a46.chunk.js",
   "static/js/1.38175a46.chunk.js.map": "/weather-now/static/js/1.38175a46.chunk.js.map",
   "runtime~main.js": "/weather-now/static/js/runtime~main.d8c546a8.js",
   "runtime~main.js.map": "/weather-now/static/js/runtime~main.d8c546a8.js.map",
   "static/media/spinner.webm": "/weather-now/static/media/spinner.b078f316.webm",
-  "static/media/App.module.scss": "/weather-now/static/media/night.d68c2cd4.jpg",
+  "static/media/App.module.scss": "/weather-now/static/media/snow.e5277e52.jpg",
   "static/media/weather-icons.css": "/weather-now/static/media/weathericons-regular-webfont.ecaf8b48.svg",
   "static/media/darksky.png": "/weather-now/static/media/darksky.c0118f98.png",
   "static/css/main.9b0c4b43.chunk.css.map": "/weather-now/static/css/main.9b0c4b43.chunk.css.map",
   "static/css/1.c2fe723b.chunk.css.map": "/weather-now/static/css/1.c2fe723b.chunk.css.map",
   "index.html": "/weather-now/index.html",
-  "precache-manifest.bcbd455c3e26f5bb987ac306f3de7691.js": "/weather-now/precache-manifest.bcbd455c3e26f5bb987ac306f3de7691.js",
+  "precache-manifest.960e09aa5ac76c89611d947d72a56da2.js": "/weather-now/precache-manifest.960e09aa5ac76c89611d947d72a56da2.js",
   "service-worker.js": "/weather-now/service-worker.js"
 }
