@@ -62,6 +62,7 @@ class App extends Component {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(position => {
         this.setState({
+          isFetching: true,
           location: {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
@@ -83,6 +84,7 @@ class App extends Component {
         ).then(res =>
           res.json().then(data => {
             this.setState({
+              isFetching: false,
               location: {
                 ...this.state.location,
                 name: `${data.results[0].address_components.city}, ${
@@ -249,6 +251,7 @@ class App extends Component {
       dayTwoWeather,
       dayThreeWeather
     } = this.state;
+
     if (location.name) {
       content = (
         <main className={styles.cardGrid}>
@@ -306,41 +309,6 @@ class App extends Component {
           currentWeather.icon === "partly-cloudy-night"
       });
     }
-
-    // let content;
-
-    // if (location.name) {
-    //   content = (
-    //     <main className={styles.cardGrid}>
-    //       <MainCard unit={unit} weather={currentWeather} />
-    //       <div className={styles.sideCardContainer}>
-    //         <SideCard unit={unit} weather={dayOneWeather} />
-    //         <SideCard unit={unit} weather={dayTwoWeather} />
-    //         <SideCard unit={unit} weather={dayThreeWeather} />
-    //       </div>
-    //     </main>
-    //   );
-    // } else if (!location.name) {
-    //   content = (
-    //     <main className={styles.defaultView}>
-    //       <h1>Enter a location</h1>
-    //     </main>
-    //   );
-    // }
-
-    // if (isFetching) {
-    //   content = (
-    //     <main width="320" height="320" className={styles.defaultView}>
-    //       <video
-    //         className={styles.spinner}
-    //         src={require("./assets/spinner.webm")}
-    //         type="video/webm"
-    //         autoPlay
-    //         loop
-    //       />
-    //     </main>
-    //   );
-    // }
 
     return (
       <div className={styles.App}>
