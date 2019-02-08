@@ -17,8 +17,8 @@ class App extends Component {
       unit: "si",
       searchQuery: "",
       location: {
-        latitude: null,
-        longitude: null,
+        latitude: 0,
+        longitude: 0,
         name: ""
       },
       currentWeather: {
@@ -31,25 +31,25 @@ class App extends Component {
         lowTemp: null
       },
       dayOneWeather: {
-        day: null,
-        icon: null,
-        precipChance: null,
-        highTemp: null,
-        lowTemp: null
+        day: "",
+        icon: "cloudy",
+        precipChance: 0,
+        highTemp: 0,
+        lowTemp: 0
       },
       dayTwoWeather: {
-        day: null,
-        icon: null,
-        precipChance: null,
-        highTemp: null,
-        lowTemp: null
+        day: "",
+        icon: "cloudy",
+        precipChance: 0,
+        highTemp: 0,
+        lowTemp: 0
       },
       dayThreeWeather: {
-        day: null,
-        icon: null,
-        precipChance: null,
-        highTemp: null,
-        lowTemp: null
+        day: "",
+        icon: "cloudy",
+        precipChance: 0,
+        highTemp: 0,
+        lowTemp: 0
       }
     };
   }
@@ -238,7 +238,8 @@ class App extends Component {
     );
   };
 
-  render() {
+  getContent = () => {
+    let content;
     const {
       isFetching,
       unit,
@@ -248,28 +249,6 @@ class App extends Component {
       dayTwoWeather,
       dayThreeWeather
     } = this.state;
-
-    // Set classes for background image based on icon
-    {
-      let cx = classNames.bind(styles);
-      var bgClasses = cx({
-        "bg-image": true,
-        sunny: currentWeather.icon === "clear-day",
-        night: currentWeather.icon === "clear-night",
-        rain: currentWeather.icon === "rain",
-        winter:
-          currentWeather.icon === "snow" || currentWeather.icon === "sleet",
-        windy: currentWeather.icon === "wind",
-        fog: currentWeather.icon === "fog",
-        cloudy:
-          currentWeather.icon === "cloudy" ||
-          currentWeather.icon === "partly-cloudy-day" ||
-          currentWeather.icon === "partly-cloudy-night"
-      });
-    }
-
-    let content;
-
     if (location.name) {
       content = (
         <main className={styles.cardGrid}>
@@ -303,6 +282,66 @@ class App extends Component {
       );
     }
 
+    return content;
+  };
+
+  render() {
+    const { unit, location, currentWeather } = this.state;
+
+    // Set classes for background image based on icon
+    {
+      let cx = classNames.bind(styles);
+      var bgClasses = cx({
+        "bg-image": true,
+        sunny: currentWeather.icon === "clear-day",
+        night: currentWeather.icon === "clear-night",
+        rain: currentWeather.icon === "rain",
+        winter:
+          currentWeather.icon === "snow" || currentWeather.icon === "sleet",
+        windy: currentWeather.icon === "wind",
+        fog: currentWeather.icon === "fog",
+        cloudy:
+          currentWeather.icon === "cloudy" ||
+          currentWeather.icon === "partly-cloudy-day" ||
+          currentWeather.icon === "partly-cloudy-night"
+      });
+    }
+
+    // let content;
+
+    // if (location.name) {
+    //   content = (
+    //     <main className={styles.cardGrid}>
+    //       <MainCard unit={unit} weather={currentWeather} />
+    //       <div className={styles.sideCardContainer}>
+    //         <SideCard unit={unit} weather={dayOneWeather} />
+    //         <SideCard unit={unit} weather={dayTwoWeather} />
+    //         <SideCard unit={unit} weather={dayThreeWeather} />
+    //       </div>
+    //     </main>
+    //   );
+    // } else if (!location.name) {
+    //   content = (
+    //     <main className={styles.defaultView}>
+    //       <h1>Enter a location</h1>
+    //     </main>
+    //   );
+    // }
+
+    // if (isFetching) {
+    //   content = (
+    //     <main width="320" height="320" className={styles.defaultView}>
+    //       <video
+    //         className={styles.spinner}
+    //         src={require("./assets/spinner.webm")}
+    //         type="video/webm"
+    //         autoPlay
+    //         loop
+    //       />
+    //     </main>
+    //   );
+    // }
+
     return (
       <div className={styles.App}>
         <div className={bgClasses} />
@@ -313,7 +352,7 @@ class App extends Component {
           searchSubmit={this.searchSubmit}
           toggleUnit={this.toggleUnit}
         />
-        {content}
+        {this.getContent()}
 
         <Footer />
       </div>
