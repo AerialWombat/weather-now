@@ -124,7 +124,7 @@ class App extends Component {
   getCoord = address => {
     return new Promise((resolve, reject) => {
       fetch(
-        `https://api.geocod.io/v1.3/geocode?q=${address}&api_key=**REMOVED**`
+        `https://api.geocod.io/v1.3/geocode?q=${address}&api_key=${GEO_API_KEY}`
       )
         .then(res => res.json())
         .then(data => resolve(data))
